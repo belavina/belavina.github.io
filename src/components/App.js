@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Header from './Header';
+import Background from './Background';
+import About from './About';
 
 export default class App extends React.Component {
-  constructor() {
-    super();
+
+  state = {
+    selectedTab: null,
   }
 
+  switchContent = (tabName) => this.setState({ selectedTab: tabName });
+
   render() {
+
+    let content = null;
+    if (this.state.selectedTab == 'about') {
+      content = <About/>;
+    }
+
     return (
-      <div>
-      </div>
+      <Fragment>
+        <Header switchContent={this.switchContent}/>
+        {content}
+
+        <Background/>
+      </Fragment>
     );
   }
 }

@@ -38,7 +38,7 @@ const config = {
       },{ test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
+        use: process.env.NODE_ENV === 'production' ? ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -48,7 +48,11 @@ const config = {
               loader: 'sass-loader'
             }
           ]
-        })
+        }): [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -57,6 +61,18 @@ const config = {
             loader: 'file-loader',
             options: {
               name: 'images/[name].[ext]'
+            }
+          }
+        ],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'videos/[name].[ext]'
             }
           }
         ],

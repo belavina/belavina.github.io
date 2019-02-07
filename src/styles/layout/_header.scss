@@ -1,0 +1,18 @@
+.header {
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+
+  &--top {
+    margin-bottom: 6rem;
+    animation: moveInBottom .8s ease-in;
+  }
+
+  &--centered {
+    @include absCenter;
+  }
+}

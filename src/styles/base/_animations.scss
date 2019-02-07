@@ -18,6 +18,20 @@
   }
 }
 
+/* H1 animation */
+@keyframes moveInBottom {
+  /* start */
+  0% {
+    opacity: 0;
+    transform: translateY(40rem);
+  }
+
+  /* finish */
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes moveInRight {
   /* start */
   0% {
@@ -65,5 +79,31 @@
   100% {
     opacity: 0.2;
     filter: opacity(0.3) grayscale(1) brightness(0.4) contrast(1.05);
+  }
+}
+
+@mixin barAnimation($percentage) {
+  animation: load 2s forwards;
+  @keyframes load {
+    @for $i from 1 through 100 {
+      #{$i * 1%} {
+        width: $i * 1%;
+      }
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin counter($percentage) {
+  animation: max_#{$percentage} 2s forwards;
+  @keyframes max_#{$percentage} {
+    @for $i from 1 through $percentage {
+      #{$i * 1%} {
+        content: "#{$i}%";
+      }
+    }
   }
 }

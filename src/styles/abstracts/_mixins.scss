@@ -51,15 +51,23 @@
   }
 }
 
+
 @mixin bar($percentage) {
   &::before {
     color: $color-tertiary;
     position: absolute;
-    left: -2.8rem;
-    content: "#{$percentage}";
+    left: -2.5rem;
+    content: '#{$percentage}%';
+    @include counter($percentage);
+
     transform: rotate(270deg);
-    font-size: 1.1rem;
+    font-size: .9rem;
+
   }
 
-  width: $percentage;
+  max-width: $percentage * 1%;
+  width: 0;
+  opacity: 0;
+  @include barAnimation($percentage);
+
 }
