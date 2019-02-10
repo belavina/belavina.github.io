@@ -1,55 +1,72 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { CSSTransition } from 'react-transition-group';
+
+// - local imports
+import skills from './data/skills';
 
 class About extends React.Component {
 
-  state = { centered: true }
+  state = { centered: true, skillDescription: null }
+
+  updateDescription = (skillType, skillNumber) => {
+    this.setState({
+      skillDescription: skills[skillType][skillNumber].description
+    });
+  }
 
   render () {
+    let skillBars = [];
+    Object.keys(skills).forEach((skillType) => {
+      skillBars.push(
+        <Fragment key={skillType}>
+          {/* skill group */}
+          <h3 className="heading-tertiary u-margin-bottom-small">
+            {skillType}
+          </h3>
+          {/* skill bars */}
+          {skills[skillType].map((skill, idx) =>
+            (<div 
+              key={`${skill.name}-${skillType}`} 
+              className={`about__skills__item about__skills__item--${skill.percentage}`}
+              onMouseEnter={() => this.updateDescription(skillType, idx)}
+              >
+              {skill.name}
+            </div>)
+          )}
+        </Fragment>
+      );
+    });
+
     return (
       <section className="about">
         <div className="about__overview">
+          <div className="about__overview-group">
+            <h3 className="heading-tertiary u-margin-bottom-small">
+              Profile
+            </h3>
+            <p className="paragraph">
+              Deeply committed to mastering my craft, I thrive on the day to day challenges that arise when creating content for the web. I aim to grow in the area of web development applying the latest trends and standards in a company that allows me to develop my creativity while acquiring new experience.
+            </p>
+          </div>         
+          <CSSTransition
+            in={this.state.skillDescription !== null}
+            timeout={300}
+            classNames="star"
+            unmountOnExit
+          >
             <div className="about__overview-group">
-                <h3 className="heading-tertiary u-margin-bottom-small">
-                    Profile
-                </h3>
-                <p className="paragraph">
-                    Deeply committed to mastering my craft, I thrive on the day to day challenges that arise when creating content for the web. I aim to grow in the area of web development applying the latest trends and standards in a company that allows me to develop my creativity while acquiring new experience.
-                </p>
+              <h3 className="heading-tertiary u-margin-bottom-small">
+                Skill
+              </h3>
+              <p className="paragraph">
+                {this.state.skillDescription}
+              </p>
             </div>
-            <div className="about__overview-group">
-                <h3 className="heading-tertiary u-margin-bottom-small">
-                    Skill
-                </h3>
-                <p className="paragraph">
-                    +2 years developing JavaScript applications including:
-                </p>
-            </div>
-
+          </CSSTransition>
         </div>
-
         <div className="about__skills">
-            <h3 className="heading-tertiary u-margin-bottom-small">
-                Programming Languages
-            </h3>
-            <div className="about__skills__item about__skills__item--90">JavaScript </div>
-            <div className="about__skills__item about__skills__item--80">Python</div>               
-            <div className="about__skills__item about__skills__item--60">PHP</div>
-            <div className="about__skills__item about__skills__item--40">C++/C</div>
-            <div className="about__skills__item about__skills__item--40">GoLang</div>                    
-            <h3 className="heading-tertiary u-margin-bottom-small">
-                Frameworks
-            </h3>
-            <div className="about__skills__item about__skills__item--90">ReactJS</div>
-            <div className="about__skills__item about__skills__item--80">NodeJS</div>               
-            <h3 className="heading-tertiary u-margin-bottom-small">
-                DataBases
-            </h3>
-            <div className="about__skills__item about__skills__item--90">MySQL</div>
-            <div className="about__skills__item about__skills__item--80">Neo4J/Cypher</div>
-            <div className="about__skills__item about__skills__item--70">Mongo</div> 
-                            
+        {skillBars}             
         </div>
-
       </section>
     );
   }
