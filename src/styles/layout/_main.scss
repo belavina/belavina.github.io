@@ -1,3 +1,6 @@
+////////////////////////
+// About Section
+
 .about {
   display: flex;
 
@@ -77,7 +80,66 @@
       }
     }
   }
+}
 
-  &__languages {
+////////////////////////
+// About Section
+.experience {
+  display: flex;
+  align-items: center;
+  height: 40vh; // to be deleted
+
+  transition: all 2s;
+
+  &__timeline {
+    width: 100%;
+    position: relative;
   }
+
+  &__timeline-breakpoint {
+
+    position: absolute;
+    left: 50%;
+    top: -5.2rem;
+    display: block;
+    height: 12rem;
+    width: 1px;
+    transform: none;
+    z-index: 1;
+    transform-origin: right;
+    background-color: $color-secondary-dark;
+    
+  }
+
+  &__timeline-breakpoint::before {
+    content: "";
+    
+    position: absolute;
+    top: calc(5.2rem + -0.5rem);
+    
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-primary;
+    border: 2px solid $color-grey-light-2;
+    z-index: 2;
+    transform: translateX(-0.95rem) rotate(45deg);
+  }
+  
+  &__timeline-history {
+    position: absolute;
+    width: 100%;
+
+    background-image: linear-gradient(to right, transparent, $color-secondary 20%);
+    height: 1rem;
+  }
+
+  &__timeline-dates {
+    position: absolute;
+    top: 4.5rem;
+    width: 100%;
+
+    background-color: $color-grey-dark;
+    height: 2px;
+  }
+
 }

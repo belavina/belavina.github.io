@@ -10,7 +10,7 @@ const Navigation = ({ onFocus }) => {
             <span>About</span>
           </a>
         </li>
-        <li className="side-nav__item">
+        <li className="side-nav__item" onClick={() => onFocus('experience')}>
           <a href="#" className="side-nav__link">
             <span>Experience</span>
           </a>

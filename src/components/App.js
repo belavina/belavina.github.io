@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react';
+
+// shared
 import Header from './Header';
 import Background from './Background';
+
+// content
 import About from './About';
+import Experience from './Experience';
 
 export default class App extends React.Component {
 
@@ -16,6 +21,8 @@ export default class App extends React.Component {
     let content = null;
     if (this.state.selectedTab == 'about') {
       content = <About/>;
+    } else if (this.state.selectedTab == 'experience') {
+      content = <Experience/>;
     }
 
     return (
