@@ -16,7 +16,6 @@ class Experience extends React.Component {
     let dateMarks = [];
 
     let firstDate = new Date(experience[0].startDate);
-    console.log(firstDate);
     firstDate.setMonth(firstDate.getMonth() - 3);
     
     const timelineSpan = new Date() - firstDate; // 100% of the timeline
@@ -67,6 +66,24 @@ class Experience extends React.Component {
           <div className="experience__timeline-history"/>
           <div className="experience__timeline-dates">
             {dateMarks}
+          </div>
+        </div>
+        <div className="experience__decription">
+          <div className="text-box">
+            <h3 className="heading-tertiary u-margin-bottom-small">
+              Profile
+            </h3>
+            <p className="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu viverra nisl. Curabitur dignissim pharetra enim, ut iaculis nibh interdum facilisis. Nullam ultrices urna ante, in suscipit velit eleifend vitae. Nam eget blandit urna. Aliquam velit quam, imperdiet ac dui quis, placerat lacinia nisi. In auctor est ac diam hendrerit malesuada. Quisque et neque molestie, ornare magna a, tristique risus. Cras egestas quis dolor vitae accumsan. Vestibulum cursus felis a eleifend semper.
+            </p>
+          </div>
+          <div className="text-box">
+            <h3 className="heading-tertiary u-margin-bottom-small">
+              Profile
+            </h3>
+            <p className="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu viverra nisl. Curabitur dignissim pharetra enim, ut iaculis nibh interdum facilisis. Nullam ultrices urna ante, in suscipit velit eleifend vitae. Nam eget blandit urna. Aliquam velit quam, imperdiet ac dui quis, placerat lacinia nisi. In auctor est ac diam hendrerit malesuada. Quisque et neque molestie, ornare magna a, tristique risus. Cras egestas quis dolor vitae accumsan. Vestibulum cursus felis a eleifend semper.
+            </p>
           </div>
         </div>
       </div>

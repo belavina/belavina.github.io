@@ -40,7 +40,7 @@ class About extends React.Component {
     return (
       <section className="about">
         <div className="about__overview">
-          <div className="about__overview-group">
+          <div className="text-box">
             <h3 className="heading-tertiary u-margin-bottom-small">
               Profile
             </h3>
@@ -54,7 +54,7 @@ class About extends React.Component {
             classNames="star"
             unmountOnExit
           >
-            <div className="about__overview-group">
+            <div className="text-box">
               <h3 className="heading-tertiary u-margin-bottom-small">
                 Skill
               </h3>
