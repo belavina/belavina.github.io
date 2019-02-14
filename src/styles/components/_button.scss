@@ -1,85 +1,95 @@
 .btn {
+
     /* link -> special state of the selector (visited should be the same as link) */
     &,
     &:link,
     &:visited {
         background-color: transparent;
-
-        text-transform: uppercase;
-        text-decoration: none;
         padding:  1rem 3rem;
         display: inline-block;
-        /* can be a transition on all the properties  (.2s for hover, active etc.)*/
         position: relative;
+
+        // text styling
+        text-transform: uppercase;
+        text-decoration: none;
         font-size: $default-font-size;
         color: $color-secondary;
         font-weight: 200;
         letter-spacing: 0.2rem;
 
-        // Change for the <button> element
         cursor: pointer;
         border: 1px solid transparent;
         transition: all .2s ease-out;
     }
 
-    &:active, /*<-when we click*/ 
+    &:active,
     &:focus {
         outline: none;
-        transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* x y blur color */
     }
 
     &:hover {
-        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x y blur color */
-        transform: translateY(-2px);
+        box-shadow: 0 0.6rem 1rem rgba($color-black,.2); /* x y blur color */
         color: $color-secondary-dark;
+
+        // arrow turning into a vertical line
+        &::before {
+            height: 80%;
+
+            // clear transparent borders
+            border-top: none;
+            border-bottom: none;
+            border-left: 0.2rem solid $color-secondary-dark;
+        }
+
+        // background hover effects
+        &::after {
+            // disappearing background
+            transform: scale(1);
+            background: none;
+            opacity: 1;
+            // border flashing effect
+            border: 1px solid $color-secondary;
+            animation: removeBorder 1s forwards;
+        }
     }
 
+    // expanding arrow (hover effect)
     &:before {
         content: "";
 
         position: absolute; 
         top: 50%; 
         left: 1rem;
-
         transform: translateY(-50%);
+        
+        // collapse height to form a triangle
         width: 0; 
         height: 0; 
+        
+        // 2 transparent borders form an arrow
         border-top: 0.5rem solid transparent;
         border-bottom: 0.5rem solid transparent;
         transition: all .2s ease-out;
-        
+
+        // left-to-right arrow >
         border-left: 0.5rem solid $color-secondary;
     }
 
-    &:after {
+    // growing background (hover effect)
+    &::after {
         content: "";
-        transform: scale(1.4);
+        // transform: scale(1.2);
         opacity: 0;
-        background: $color-secondary; 
-        position: absolute; 
+        background-color: $color-secondary; 
+
+        position: absolute;
         bottom: 0%; 
         left: 0%; 
-        height: 50%; 
         width: 100%;
         height: 100%;
+
+        z-index: -1;
         transition: all .2s ease-out;
-
-    }
-
-    &:hover:after {
-        transform: scale(1);
-        background: none;
-        border: 1px solid $color-secondary;
-        opacity: 1;
-        animation: removeBorder 1s forwards;
-    }
-
-
-    &:hover::before {
-        transform: translateY(-50%);
-        height: 100%; 
-        border: none;
-        border-left: 0.2rem solid $color-secondary-dark;
     }
 }
