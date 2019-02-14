@@ -19,12 +19,11 @@ class Experience extends React.Component {
     firstDate.setMonth(firstDate.getMonth() - 3);
     
     const timelineSpan = new Date() - firstDate; // 100% of the timeline
-    // let lastDate = 0;
-
+    // percentage from the total timeline
     const calcLeft = (d) => (d - firstDate)*100/timelineSpan;
 
     experience.forEach((job) => {
-      const startPercentage = calcLeft(new Date(job.startDate))
+      const startPercentage = calcLeft(new Date(job.startDate));
       const endPercentage = job.endDate ? calcLeft(new Date(job.endDate)) : 100;
       breakpoints.push(
         <div 

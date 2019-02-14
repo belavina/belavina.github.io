@@ -7,6 +7,7 @@ import Background from './Background';
 // content
 import About from './About';
 import Experience from './Experience';
+import Contact from './Contact';
 
 export default class App extends React.Component {
 
@@ -23,6 +24,8 @@ export default class App extends React.Component {
       content = <About/>;
     } else if (this.state.selectedTab == 'experience') {
       content = <Experience/>;
+    } else if (this.state.selectedTab == 'contact') {
+      content = <Contact/>;
     }
 
     return (

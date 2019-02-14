@@ -91,6 +91,9 @@
   }
 
   &__timeline-breakpoint {
+
+    opacity: 0;
+    animation: fadeIn 0.8s 0.8s forwards;
     position: absolute;
     // left: 50%;
     top: -5.2rem;
@@ -108,6 +111,7 @@
   }
 
   &__timeline-breakpoint::after {
+
     content: "";
     position: absolute;
     top: 3.5rem;
@@ -165,6 +169,8 @@
   }
   
   &__timeline-history {
+
+    animation: expandWidth 2s;
     position: absolute;
     width: 100%;
 
@@ -173,6 +179,8 @@
   }
 
   &__timeline-dates {
+
+    animation: fadeIn 2.2s;
     position: absolute;
     top: 4.5rem;
     width: 100%;
@@ -202,5 +210,22 @@
 
   &__decription {
     display: flex;
+  }
+}
+
+////////////////////
+// Email section
+.contact {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__email {
+    width: 70%;
+  }
+
+  &__social {
+
   }
 }
