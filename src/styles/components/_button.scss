@@ -17,17 +17,40 @@
         letter-spacing: 0.2rem;
 
         // Change for the <button> element
-        border: none;
         cursor: pointer;
-        border: 2px solid transparent;
-
-
+        border: 1px solid transparent;
+        transition: all .2s ease-out;
     }
 
-    // &:hover {
-    //     box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x y blur color */
-    //     // border: 2px solid orangered;
-    // }
+    &:active, /*<-when we click*/ 
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* x y blur color */
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x y blur color */
+        transform: translateY(-2px);
+        color: $color-secondary-dark;
+    }
+
+    &:before {
+        content: "";
+
+        position: absolute; 
+        top: 50%; 
+        left: 1rem;
+
+        transform: translateY(-50%);
+        width: 0; 
+        height: 0; 
+        border-top: 0.5rem solid transparent;
+        border-bottom: 0.5rem solid transparent;
+        transition: all .2s ease-out;
+        
+        border-left: 0.5rem solid $color-secondary;
+    }
 
     &:after {
         content: "";
@@ -49,6 +72,14 @@
         background: none;
         border: 1px solid $color-secondary;
         opacity: 1;
+        animation: removeBorder 1s forwards;
     }
 
+
+    &:hover::before {
+        transform: translateY(-50%);
+        height: 100%; 
+        border: none;
+        border-left: 0.2rem solid $color-secondary-dark;
+    }
 }

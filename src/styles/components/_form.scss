@@ -12,7 +12,8 @@
         padding: 1.5rem 2rem;
         border-radius: 2px;
         background-color: transparent;
-        border: 1px solid $color-secondary-dark;
+        border: none;
+        border-bottom: 1px solid $color-secondary-dark;
 
         width: 90%;
         display: block;

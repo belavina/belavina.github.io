@@ -99,6 +99,13 @@
   to { transform: scaleX(1); }
 }
 
+@keyframes removeBorder {
+  to {
+      border: 1px solid transparent;
+  }
+}
+
+
 @mixin barAnimation($percentage) {
   animation: load 2s forwards;
   @keyframes load {
