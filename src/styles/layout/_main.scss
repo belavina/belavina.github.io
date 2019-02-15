@@ -1,6 +1,10 @@
 ////////////////////////
 // About Section
 
+.content {
+  // display: flex;
+}
+
 .about {
   display: flex;
 
@@ -218,14 +222,114 @@
 .contact {
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.email {
+  flex: 0 0 60%;
+  margin-right: 6rem;
+  padding: 3rem 5rem;
+}
+
+$skew-social: 0deg;
+$rotate-social: 0deg;
+
+.social {
+
+  padding: 3rem 5rem;
+  display: flex;
   align-items: center;
 
-  &__email {
-    width: 70%;
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
   }
 
-  &__social {
+  &__link {
+    height: 5rem;
+    width: 5rem;
+  }
+
+
+  &__icon-box {
+    // background-color: $color-primary;
+    // border: 3px solid $color-secondary;
+    // border-bottom: none;
+    padding: 2rem;
+
+    &:hover::before {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      z-index: -1;
+
+      // clear transparent borders
+      border: 0.5rem solid transparent;
+
+      // border-top: 0.2rem solid $color-secondary-dark;
+      border-left: 0.2rem solid $color-secondary-dark;
+      border-right: 0.2rem solid $color-secondary-dark;
+
+    }
+
+    &:before {
+      content: "";
+      // border-radius: 50%;
+
+      position: absolute; 
+      top: 50%; 
+      left: 0;
+      transform: translateY(-50%);
+      
+      // collapse height to form a triangle
+      width: 0; 
+      height: 0; 
+      
+      // 2 transparent borders form an arrow
+      border: 0.5rem solid transparent;
+      border-top: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      transition: all .2s ease-out;
+
+      z-index: -1;
+
+      // left-to-right arrow >
+      border-left: 0.5rem solid $color-secondary;
+  }
+
+  }
+
+  &__icon-box:nth-child(even) {
+    // background-color: $color-primary;
+    transform: skew($skew-social) rotate($rotate-social);
+  }
+
+  &__icon-box:nth-child(odd) {
+    transform: skew(-$skew-social) rotate(-$rotate-social);
+  }
+
+  &__icon {
+    height: 5rem;
+    width: 5rem;
+    fill: $color-secondary;
+  }
+
+  // &__icon-box:nth-child(even) &__icon {
+  //   transform: skew(-$skew-social) rotate(-$rotate-social);
+  // }
+
+  // &__icon-box:nth-child(odd) &__icon {
+  //   transform: skew($skew-social) rotate($rotate-social);
+  // }
+  
+
+  &__icon {
 
   }
 }

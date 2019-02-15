@@ -59,7 +59,7 @@ class Experience extends React.Component {
     
     
     return (
-      <div className="experience">
+      <section className="experience">
         <div className="experience__timeline">
           {breakpoints}
           <div className="experience__timeline-history"/>
@@ -85,7 +85,7 @@ class Experience extends React.Component {
             </p>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

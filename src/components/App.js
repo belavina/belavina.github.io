@@ -31,8 +31,9 @@ export default class App extends React.Component {
     return (
       <Fragment>
         <Header switchContent={this.switchContent}/>
-        {content}
-
+        <div className="content">
+          {content}
+        </div>
         <Background/>
       </Fragment>
     );

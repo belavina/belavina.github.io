@@ -7,15 +7,16 @@ class Contact extends React.Component {
 
     return (
       <section className="contact">
-        <div className="contact__email">
+        <div className="email">
+   
           <form action="#" className="form">
             <div className="form__group">
-                <input type="text" className="form__input" placeholder="Full name" id="name" required/>
-                <label htmlFor="name" className="form__label">Full name</label>
+                <input type="text" className="form__input" placeholder="Subject" id="subject" required/>
+                <label htmlFor="subject" className="form__label">Subject</label>
             </div>
             <div className="form__group">
-                <input type="email" className="form__input" placeholder="Email address" id="email" required/>
-                <label htmlFor="email" className="form__label">Email address</label>
+                <textarea className="form__input form__input--textarea" placeholder="Email Body" id="body" required/>
+                <label htmlFor="body" className="form__label">Email Body</label>
             </div>
 
             <div className="form__group">
@@ -23,7 +24,28 @@ class Contact extends React.Component {
             </div>
           </form>
         </div>
-        <div className="contact__social">
+        <div className="social">
+          <div className="social__icon-box">
+            <a href="https://www.linkedin.com/in/olga-belavina/" className="social__link" target="_blank">
+              <svg className="social__icon">
+                <use xlinkHref="/images/sprite.svg#icon-linkedin"/>
+              </svg>
+            </a>
+          </div>
+          <div className="social__icon-box">
+            <a href="https://github.com/belavina" className="social__link" target="_blank">
+              <svg className="social__icon">
+                <use xlinkHref="/images/sprite.svg#icon-github"/>
+              </svg>
+            </a>
+          </div>
+          <div className="social__icon-box">
+            <a href="https://www.goodreads.com/user/show/81175838-olga" className="social__link" target="_blank">
+              <svg className="social__icon">
+                <use xlinkHref="/images/sprite.svg#icon-goodreads"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
     );
