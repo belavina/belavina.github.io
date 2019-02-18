@@ -1,26 +1,25 @@
 import React from "react";
+import { Link } from "@reach/router";
 
-const Navigation = ({ onFocus }) => {
+const Navigation = ({ navSelected }) => {
   
+  const navItems = [
+    {title: 'About', path: 'about'},
+    {title: 'Experience', path: 'experience'},
+    {title: 'Contact', path: 'contact'},
+  ];
+
   return (
     <nav className="sidebar">
       <ul className="side-nav">
-        <li className="side-nav__item" onClick={() => onFocus('about')}>
-          <a href="#" className="side-nav__link">
-            <span>About</span>
-          </a>
-        </li>
-        <li className="side-nav__item" onClick={() => onFocus('experience')}>
-          <a href="#" className="side-nav__link">
-            <span>Experience</span>
-          </a>
-        </li>
-        <li className="side-nav__item" onClick={() => onFocus('contact')}>
-          <a href="#" className="side-nav__link">
-            <span>Contact</span>
-          </a>
-        </li>
-      </ul>
+        {navItems.map((item) => (
+          <li className="side-nav__item" key={item.path}>
+            <Link to={item.path} onClick={navSelected} className="side-nav__link">
+              {item.title}
+            </Link>
+          </li>
+        ))}
+        </ul>
     </nav>
   );
 };

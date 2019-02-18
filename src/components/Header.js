@@ -1,13 +1,10 @@
 import React from "react";
 import Navigation from './Navigation';
 
+
 class Header extends React.Component {
 
-  state = { centered: true }
-  handleNavigationSelection = (tabName) => {
-    this.setState({ centered: false });
-    this.props.switchContent(tabName);
-  }
+  state = { centered: window.location.pathname == '/' }
 
   render () {
 
@@ -15,14 +12,12 @@ class Header extends React.Component {
 
     return (
       <header className={`header ${headerPosition}`}>
-      <h1 className="heading-primary">
-        <span className="heading-primary--main">John Doe</span>
-        <span className="heading-primary--sub">Software Developer</span>
-      </h1>
-      <Navigation
-        onFocus={this.handleNavigationSelection}
-      />
-    </header>
+        <h1 className="heading-primary">
+          <span className="heading-primary--main">Olga Belavina</span>
+          <span className="heading-primary--sub">Software Developer</span>
+        </h1>
+        <Navigation navSelected={()=>this.setState({ centered: false  })}/>
+      </header>
     );
   }
 }

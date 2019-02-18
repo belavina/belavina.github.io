@@ -9,6 +9,7 @@ const config = {
     compress: true,
     hot: false,
     port: 8090,
+    historyApiFallback: true,
     disableHostCheck: true
   },
   plugins: [

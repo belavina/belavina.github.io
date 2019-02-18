@@ -1,4 +1,5 @@
 import React from "react";
+import social from './data/social';
 
 class Contact extends React.Component {
 
@@ -8,7 +9,6 @@ class Contact extends React.Component {
     return (
       <section className="contact">
         <div className="email">
-   
           <form action="#" className="form">
             <div className="form__group">
                 <input type="text" className="form__input" placeholder="Subject" id="subject" required/>
@@ -25,27 +25,15 @@ class Contact extends React.Component {
           </form>
         </div>
         <div className="social">
-          <div className="social__icon-box">
-            <a href="https://www.linkedin.com/in/olga-belavina/" className="social__link" target="_blank">
-              <svg className="social__icon">
-                <use xlinkHref="/images/sprite.svg#icon-linkedin"/>
-              </svg>
-            </a>
-          </div>
-          <div className="social__icon-box">
-            <a href="https://github.com/belavina" className="social__link" target="_blank">
-              <svg className="social__icon">
-                <use xlinkHref="/images/sprite.svg#icon-github"/>
-              </svg>
-            </a>
-          </div>
-          <div className="social__icon-box">
-            <a href="https://www.goodreads.com/user/show/81175838-olga" className="social__link" target="_blank">
-              <svg className="social__icon">
-                <use xlinkHref="/images/sprite.svg#icon-goodreads"/>
-              </svg>
-            </a>
-          </div>
+          {social.map((iconBox) => (
+            <div className="social__icon-box" key={iconBox.icon}>
+              <a href={iconBox.icon} className="social__link" target="_blank">
+                <svg className="social__icon">
+                  <use xlinkHref={`/images/sprite.svg#${iconBox.icon}`}/>
+                </svg>
+              </a>
+            </div>
+          ))}
         </div>
       </section>
     );

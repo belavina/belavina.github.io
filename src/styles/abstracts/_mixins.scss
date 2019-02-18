@@ -5,6 +5,32 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin bgEffect {
+  content: "";
+  // transform: scale(1.2);
+  opacity: 0;
+  background-color: $color-secondary; 
+
+  position: absolute;
+  bottom: 0%; 
+  left: 0%; 
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+  transition: all .2s ease-out;
+}
+
+@mixin bgEffectHover {
+  // disappearing background
+  transform: scale(1);
+  background: none;
+  opacity: 1;
+  // border flashing effect
+  border: 1px solid $color-secondary;
+  animation: removeBorder 1s forwards;
+}
+
 // MEDIA QUERY MANAGER
 /*
   
