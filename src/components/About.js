@@ -65,7 +65,7 @@ class About extends React.Component {
           </CSSTransition>
         </div>
         <div className="about__skills">
-        {skillBars}             
+          {skillBars}             
         </div>
       </section>
     );

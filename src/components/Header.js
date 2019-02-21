@@ -16,7 +16,7 @@ class Header extends React.Component {
           <span className="heading-primary--main">Olga Belavina</span>
           <span className="heading-primary--sub">Software Developer</span>
         </h1>
-        <Navigation navSelected={()=>this.setState({ centered: false  })}/>
+        <Navigation moveHeaderUp={()=>this.setState({ centered: false  })}/>
       </header>
     );
   }

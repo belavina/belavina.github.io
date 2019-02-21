@@ -232,14 +232,6 @@
   animation: fadeIn 1s;
 }
 
-$skew-social: 15deg;
-$rotate-social: 15deg;
-
-// .content {
-//   display: flex;
-//   justify-items: center;
-// }
-
 .social {
 
   flex-grow: 1;
@@ -248,41 +240,30 @@ $rotate-social: 15deg;
   animation: fadeIn 1s 0.5s;
   animation-fill-mode: backwards; 
 
-  & > * {
-    padding: 0 2rem;
+  &__link {
     cursor: pointer;
-    height: 100%;
-    display: flex;
-    align-items: center;
   }
 
-  &__link {
-    height: 5rem;
-    width: 5rem;
+  // create "diamond" icon background
+  &__link:nth-child(even) &__icon-box {
+    transform: skew($skew-social) rotate($rotate-social);
+  }
+
+  &__link:nth-child(odd) &__icon-box {
+    transform: skew(-$skew-social) rotate(-$rotate-social);
   }
 
   // box around icon
   &__icon-box {
     border: 1px solid transparent;
-    // border-bottom: none;
     padding: 2rem;
 
     &::after {
       @include bgEffect;
     }
   }
-
-  &__icon-box:nth-child(even) {
-    // background-color: $color-primary;
-    transform: skew($skew-social) rotate($rotate-social);
-  }
-
-  &__icon-box:nth-child(odd) {
-    transform: skew(-$skew-social) rotate(-$rotate-social);
-  }
-
+  
   &__icon-box:hover {
- 
     box-shadow: 0 0.6rem 1rem rgba($color-black,.2); /* x y blur color */
     &::after {
       @include bgEffectHover;
@@ -293,27 +274,20 @@ $rotate-social: 15deg;
     fill: rgba($color-secondary, 1);
   }
 
-
+  // svg icon
   &__icon {
     height: 4.5rem;
     width: 4.5rem;
-    
-    // stroke: $color-secondary;
-    // stroke-width: 1px;
-    // stroke-opacity: 0.8;
     fill: rgba($color-secondary, 0.7);
   }
 
-  &__icon-box:nth-child(even) &__icon {
+  // undo skew for the nested icon
+  &__link:nth-child(even) &__icon {
     transform: skew(-$skew-social) rotate(-$rotate-social);
   }
 
-  &__icon-box:nth-child(odd) &__icon {
+  &__link:nth-child(odd) &__icon {
     transform: skew($skew-social) rotate($rotate-social);
   }
   
-
-  &__icon {
-
-  }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import PropTypes from 'prop-types';
 
-const Navigation = ({ navSelected }) => {
+const Navigation = ({ moveHeaderUp }) => {
   
   const navItems = [
     {title: 'About', path: 'about'},
@@ -15,7 +15,7 @@ const Navigation = ({ navSelected }) => {
       <ul className="side-nav">
         {navItems.map((item) => (
           <li className="side-nav__item" key={item.path}>
-            <Link to={item.path} onClick={navSelected} className="side-nav__link">
+            <Link to={item.path} onClick={moveHeaderUp} className="side-nav__link">
               {item.title}
             </Link>
           </li>
@@ -26,8 +26,8 @@ const Navigation = ({ navSelected }) => {
 };
 
 Navigation.propTypes = {
-  /** indicates if any of the routing options/links are selected */
-  navSelected: PropTypes.bool.isRequired,
+  /** notify header when any of the routing options/links are selected */
+  moveHeaderUp: PropTypes.func.isRequired,
 };
 
 export default Navigation;
