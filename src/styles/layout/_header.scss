@@ -9,7 +9,15 @@
 
   &--top {
     margin-bottom: 6rem;
-    animation: moveInBottom .8s ease-in;
+    animation: fadeIn .8s ease-in;
+
+    .heading-primary--main {
+      animation: none;
+    }
+
+    .heading-primary--sub {
+      animation: none;
+    }
   }
 
   &--centered {

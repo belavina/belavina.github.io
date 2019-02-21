@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import PropTypes from 'prop-types';
 
 const Navigation = ({ navSelected }) => {
   
@@ -19,9 +20,14 @@ const Navigation = ({ navSelected }) => {
             </Link>
           </li>
         ))}
-        </ul>
+      </ul>
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  /** indicates if any of the routing options/links are selected */
+  navSelected: PropTypes.bool.isRequired,
 };
 
 export default Navigation;

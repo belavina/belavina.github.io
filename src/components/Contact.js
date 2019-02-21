@@ -1,6 +1,8 @@
 import React from "react";
 import social from './data/social';
 
+import SocialBox from './SocialBox';
+
 class Contact extends React.Component {
 
 
@@ -18,21 +20,14 @@ class Contact extends React.Component {
                 <textarea className="form__input form__input--textarea" placeholder="Email Body" id="body" required/>
                 <label htmlFor="body" className="form__label">Email Body</label>
             </div>
-
             <div className="form__group">
                 <button className="btn">Send Email</button>
             </div>
           </form>
         </div>
         <div className="social">
-          {social.map((iconBox) => (
-            <div className="social__icon-box" key={iconBox.icon}>
-              <a href={iconBox.icon} className="social__link" target="_blank">
-                <svg className="social__icon">
-                  <use xlinkHref={`/images/sprite.svg#${iconBox.icon}`}/>
-                </svg>
-              </a>
-            </div>
+          {social.map((boxDetails) => (
+            <SocialBox boxDetails={boxDetails} key={boxDetails.icon}/>
           ))}
         </div>
       </section>

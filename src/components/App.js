@@ -12,12 +12,6 @@ import Contact from './Contact';
 
 export default class App extends React.Component {
 
-  state = {
-    selectedTab: null,
-  }
-
-  switchContent = (tabName) => this.setState({ selectedTab: tabName });
-
   render() {
     return (
       <Fragment>

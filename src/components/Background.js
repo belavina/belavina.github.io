@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Background = () => {
   return (
     <div className="bg-video">
       <video className="bg-video__content" autoPlay muted loop>
@@ -11,4 +11,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Background;
