@@ -1,27 +1,59 @@
 import React from "react";
-import social from './data/social';
+import * as emailjs from 'emailjs-com';
 
+// -- local imports
+import social from './data/social';
 import SocialBox from './SocialBox';
+import ContactInput from './ContactInput';
 
 class Contact extends React.Component {
 
+  state = {
+    subject: "",
+    body: "",
+    btnDisabled: false,
+  };
+
+  handleChange = (event) => this.setState({ [event.target.name]: event.target.value });
+
+  sendEmail = (event) => {
+    event.preventDefault();
+    this.setState({ btnDisabled: true });
+
+    emailjs.send(
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
+        this.state,
+        process.env.EMAILJS_USER_ID
+      ).then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      }, (error) => {
+        console.log('FAILED...', error);
+      }
+    ).then(() => {
+      this.setState({ btnDisabled: false });
+    });
+  }
 
   render () {
 
     return (
       <section className="contact">
         <div className="email">
-          <form action="#" className="form">
+          <form action="#" className="form" onSubmit={this.sendEmail}>
+            <ContactInput
+              placeholder="Email Subject"
+              inputId="subject"
+              handleChange={this.handleChange}
+            />
+            <ContactInput
+              inputType="textarea"
+              placeholder="Email Body"
+              inputId="body"
+              handleChange={this.handleChange}
+            />
             <div className="form__group">
-                <input type="text" className="form__input" placeholder="Subject" id="subject" required/>
-                <label htmlFor="subject" className="form__label">Subject</label>
-            </div>
-            <div className="form__group">
-                <textarea className="form__input form__input--textarea" placeholder="Email Body" id="body" required/>
-                <label htmlFor="body" className="form__label">Email Body</label>
-            </div>
-            <div className="form__group">
-                <button className="btn">Send Email</button>
+              <button className="btn" disabled={this.state.btnDisabled}>contact</button>
             </div>
           </form>
         </div>

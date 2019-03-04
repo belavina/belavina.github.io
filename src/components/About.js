@@ -47,7 +47,7 @@ class About extends React.Component {
             <p className="paragraph">
               Deeply committed to mastering my craft, I thrive on the day to day challenges that arise when creating content for the web. I aim to grow in the area of web development applying the latest trends and standards in a company that allows me to develop my creativity while acquiring new experience.
             </p>
-          </div>         
+          </div>
           <CSSTransition
             in={this.state.skillDescription !== null}
             timeout={300}
@@ -65,7 +65,7 @@ class About extends React.Component {
           </CSSTransition>
         </div>
         <div className="about__skills">
-          {skillBars}             
+          {skillBars}
         </div>
       </section>
     );

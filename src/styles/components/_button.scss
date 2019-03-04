@@ -29,7 +29,7 @@
         box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* x y blur color */
     }
 
-    &:hover {
+    &:hover:enabled {
         box-shadow: 0 0.6rem 1rem rgba($color-black,.2); /* x y blur color */
         color: $color-secondary;
 
@@ -49,8 +49,12 @@
         }
     }
 
+    &:disabled {
+        color: rgba($color-secondary-dark, 0.6);
+    }
+
     // expanding arrow (hover effect)
-    &:before {
+    &::before {
         content: "";
 
         position: absolute; 
