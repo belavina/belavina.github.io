@@ -1,22 +1,25 @@
 import React, { Fragment } from "react";
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from "react-transition-group";
 
 // - local imports
-import skills from './data/skills';
+import skills from "./data/skills";
 
 class About extends React.Component {
+  state = { centered: true, selectedSkill: null };
 
-  state = { centered: true, skillDescription: null }
-
-  updateDescription = (skillType, skillNumber) => {
+  updateDescription = skill => {
     this.setState({
-      skillDescription: skills[skillType][skillNumber].description
+      selectedSkill: skill
     });
-  }
+  };
 
-  render () {
+  clearDescription = () => {
+    this.setState({ selectedSkill: null });
+  };
+
+  render() {
     let skillBars = [];
-    Object.keys(skills).forEach((skillType) => {
+    Object.keys(skills).forEach(skillType => {
       skillBars.push(
         <Fragment key={skillType}>
           {/* skill group */}
@@ -24,49 +27,50 @@ class About extends React.Component {
             {skillType}
           </h3>
           {/* skill bars */}
-          {skills[skillType].map((skill, idx) =>
-            (<div 
-              key={`${skill.name}-${skillType}`} 
-              className={`about__skills__item about__skills__item--${skill.percentage}`}
-              onMouseEnter={() => this.updateDescription(skillType, idx)}
-              >
+          {skills[skillType].map(skill => (
+            <div
+              key={`${skill.name}-${skillType}`}
+              className={`about__skills__item about__skills__item--${
+                skill.percentage
+              }`}
+              onMouseEnter={() => this.updateDescription(skill)}
+              onMouseLeave={this.clearDescription}
+            >
               {skill.name}
-            </div>)
-          )}
+            </div>
+          ))}
         </Fragment>
       );
     });
+
+    const { selectedSkill } = this.state;
 
     return (
       <section className="about">
         <div className="about__overview">
           <div className="text-box">
-            <h3 className="heading-tertiary u-margin-bottom-small">
-              Profile
-            </h3>
+            <h3 className="heading-tertiary u-margin-bottom-small">Profile</h3>
             <p className="paragraph">
-              Deeply committed to mastering my craft, I thrive on the day to day challenges that arise when creating content for the web. I aim to grow in the area of web development applying the latest trends and standards in a company that allows me to develop my creativity while acquiring new experience.
+              <span className="paragraph__block">
+                Hello there!
+                <br />I am a full-stack developer based in Toronto, Canada.
+              </span>
+              Deeply dedicated to mastering my craft, I always strive to build
+              exceptional experiences with modern tools and technologies. When
+              not writing code, I really enjoy learning new stuff, reading books
+              and sketching random things.
             </p>
           </div>
-          <CSSTransition
-            in={this.state.skillDescription !== null}
-            timeout={300}
-            classNames="star"
-            unmountOnExit
-          >
+          {selectedSkill && (
             <div className="text-box">
               <h3 className="heading-tertiary u-margin-bottom-small">
-                Skill
+                {selectedSkill.name}
               </h3>
-              <p className="paragraph">
-                {this.state.skillDescription}
-              </p>
+              <p className="paragraph">{selectedSkill.description}</p>
             </div>
-          </CSSTransition>
+          )}
         </div>
-        <div className="about__skills">
-          {skillBars}
-        </div>
+        <div className="about__skills">{skillBars}</div>
       </section>
     );
   }

@@ -1,58 +1,58 @@
 {
-  "Programming Languages": [
-    {
-      "name": "Javascript",
-      "percentage": "90",
-      "description": "Hello js"
-    },
-    {
-      "name": "Python",
-      "percentage": "80",
-      "description": "Hello py!"
-    },
-    {
-      "name": "PHP",
-      "percentage": "60",
-      "description": ""
-    },
-    {
-      "name": "C++/C",
-      "percentage": "40",
-      "description": ""
-    },
-    {
-      "name": "GoLang",
-      "percentage": "40",
-      "description": ""
-    }
-  ],
-  "Frameworks": [
-    {
-      "name": "ReactJS",
-      "percentage": "90",
-      "description": ""
-    },
-    {
-      "name": "NodeJS",
-      "percentage": "80",
-      "description": ""
-    }
-  ],
-  "Databases": [
-    {
-      "name": "MySQL",
-      "percentage": "90",
-      "description": ""
-    },
-    {
-      "name": "Neo4J/Cypher",
-      "percentage": "80",
-      "description": ""
-    },
-    {
-      "name": "Mongo",
-      "percentage": "80",
-      "description": ""
-    }
-  ]
+    "Programming Languages": [
+        {
+            "name": "Python",
+            "percentage": "90",
+            "description": "Hello js"
+        },
+        {
+            "name": "Javascript",
+            "percentage": "80",
+            "description": "Hello py!"
+        },
+        {
+            "name": "PHP",
+            "percentage": "60",
+            "description": ""
+        },
+        {
+            "name": "C++/C",
+            "percentage": "40",
+            "description": ""
+        },
+        {
+            "name": "GoLang",
+            "percentage": "40",
+            "description": ""
+        }
+    ],
+    "Frameworks": [
+        {
+            "name": "ReactJS",
+            "percentage": "90",
+            "description": ""
+        },
+        {
+            "name": "NodeJS",
+            "percentage": "80",
+            "description": ""
+        }
+    ],
+    "Databases": [
+        {
+            "name": "MySQL",
+            "percentage": "90",
+            "description": ""
+        },
+        {
+            "name": "Neo4J/Cypher",
+            "percentage": "80",
+            "description": ""
+        },
+        {
+            "name": "Mongo",
+            "percentage": "80",
+            "description": ""
+        }
+    ]
 }
