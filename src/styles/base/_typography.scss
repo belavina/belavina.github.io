@@ -27,13 +27,13 @@ body {
         background: linear-gradient(
                 to bottom,
                 rgba($color-secondary, 0.2),
-                rgba($color-secondary, 1)
+                rgba($color-secondary-dark, 1)
             ),
-            url(/images/letter_bg.jpg) no-repeat;
+            url(/images/letter_bg.jpg);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-        animation: moveInLeft 0.8s ease-out;
+        animation: moveInLeft 1.4s ease-out;
     }
 
     &--sub {
@@ -42,7 +42,7 @@ body {
         font-weight: 700;
         letter-spacing: 1.75rem;
 
-        animation: moveInRight 0.8s ease-out 0.3s;
+        animation: moveInRight 1.2s ease-out 0.5s;
         animation-fill-mode: backwards;
 
         @include respond(phone) {
