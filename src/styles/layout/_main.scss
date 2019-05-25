@@ -95,7 +95,6 @@
   }
 
   &__timeline-breakpoint {
-
     opacity: 0;
     animation: fadeIn 0.8s 0.8s forwards;
     position: absolute;
@@ -108,14 +107,13 @@
     z-index: 1;
     transform-origin: right;
     cursor: pointer;
-    // linear-gradient( 
+    // linear-gradient(
     //   to bottom, transparent, $color-secondary 100%
     // );
     border-left: 2px solid $color-secondary-dark;
   }
 
   &__timeline-breakpoint::after {
-
     content: "";
     position: absolute;
     top: 3.5rem;
@@ -128,22 +126,21 @@
 
   &__timeline-breakpoint:hover::after {
     opacity: 1;
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 5px,
-        rgba($color-secondary, 0.1) 5px,
-        rgba($color-secondary, 0.1) 10px,
-      );
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      rgba($color-secondary, 0.1) 5px,
+      rgba($color-secondary, 0.1) 10px
+    );
   }
 
   &__timeline-breakpoint::before {
     content: "";
-    
+
     position: absolute;
     top: calc(5.2rem + -0.5rem);
-    
+
     width: 2rem;
     height: 2rem;
     background-color: $color-primary;
@@ -171,19 +168,21 @@
     letter-spacing: 0.3rem;
     color: $color-grey-dark-2;
   }
-  
-  &__timeline-history {
 
+  &__timeline-history {
     animation: expandWidth 2s;
     position: absolute;
     width: 100%;
 
-    background-image: linear-gradient(to right, transparent, $color-secondary 20%);
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      $color-secondary 20%
+    );
     height: 1rem;
   }
 
   &__timeline-dates {
-
     animation: fadeIn 2.2s;
     position: absolute;
     top: 4.5rem;
@@ -233,12 +232,11 @@
 }
 
 .social {
-
   flex-grow: 1;
   padding: 3rem 5rem;
   display: flex;
   animation: fadeIn 1s 0.5s;
-  animation-fill-mode: backwards; 
+  animation-fill-mode: backwards;
 
   &__link {
     cursor: pointer;
@@ -262,9 +260,9 @@
       @include bgEffect;
     }
   }
-  
+
   &__icon-box:hover {
-    box-shadow: 0 0.6rem 1rem rgba($color-black,.2); /* x y blur color */
+    box-shadow: 0 0.6rem 1rem rgba($color-black, 0.2); /* x y blur color */
     &::after {
       @include bgEffectHover;
     }
@@ -289,5 +287,4 @@
   &__link:nth-child(odd) &__icon {
     transform: skew($skew-social) rotate($rotate-social);
   }
-  
 }

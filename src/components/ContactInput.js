@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
-  
   let input = {};
-  if (inputType == 'text') {
+  if (inputType == "text") {
     input = (
       <input
         type="text"
@@ -16,7 +15,7 @@ const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
         required="required"
       />
     );
-  } else if (inputType == 'textarea') {
+  } else if (inputType == "textarea") {
     input = (
       <textarea
         className="form__input form__input--textarea"
@@ -32,7 +31,9 @@ const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
   return (
     <div className="form__group">
       {input}
-      <label htmlFor={inputId} className="form__label">{placeholder}</label>
+      <label htmlFor={inputId} className="form__label">
+        {placeholder}
+      </label>
     </div>
   );
 };
@@ -41,13 +42,13 @@ ContactInput.propTypes = {
   /** input id & name */
   inputId: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(['text', 'textarea']),
+  inputType: PropTypes.oneOf(["text", "textarea"]),
   /** called on input change */
-  handleChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 ContactInput.defaultProps = {
-  inputType: 'text',
+  inputType: "text"
 };
 
 export default ContactInput;

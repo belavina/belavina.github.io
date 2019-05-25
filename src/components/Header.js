@@ -1,14 +1,13 @@
 import React from "react";
-import Navigation from './Navigation';
-
+import Navigation from "./Navigation";
 
 class Header extends React.Component {
+  state = { centered: window.location.pathname == "/" };
 
-  state = { centered: window.location.pathname == '/' }
-
-  render () {
-
-    const headerPosition = this.state.centered?'header--centered':'header--top';
+  render() {
+    const headerPosition = this.state.centered
+      ? "header--centered"
+      : "header--top";
 
     return (
       <header className={`header ${headerPosition}`}>
@@ -16,7 +15,7 @@ class Header extends React.Component {
           <span className="heading-primary--main">Olga Belavina</span>
           <span className="heading-primary--sub">Software Developer</span>
         </h1>
-        <Navigation moveHeaderUp={()=>this.setState({ centered: false  })}/>
+        <Navigation moveHeaderUp={() => this.setState({ centered: false })} />
       </header>
     );
   }
