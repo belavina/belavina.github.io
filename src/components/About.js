@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 
 // - local imports
 import skills from "./data/skills";
+import devInfo from "./data/devInfo";
 
 class About extends React.Component {
   state = { centered: true, selectedSkill: null };
@@ -53,12 +54,10 @@ class About extends React.Component {
             <p className="paragraph">
               <span className="paragraph__block">
                 Hello there!
-                <br />I am a full-stack developer based in Toronto, Canada.
+                <br />
+                {devInfo.shortIntro}
               </span>
-              Deeply dedicated to mastering my craft, I always strive to build
-              exceptional experiences with modern tools and technologies. When
-              not writing code, I really enjoy learning new stuff, reading books
-              and sketching random things.
+              {devInfo.description}
             </p>
           </div>
           {selectedSkill && (
