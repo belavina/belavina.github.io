@@ -2,14 +2,23 @@ import React from "react";
 import experience from "./data/experience";
 
 class Experience extends React.Component {
+  state = {
+    selectedRole: experience[experience.length - 1]
+  };
+
   calculateYears = startDate => {
     const ageDifMs = Date.now() - startDate.getTime();
     return Math.abs(new Date(ageDifMs).getUTCFullYear() - 1970);
   };
 
+  selectRole = job => {
+    this.setState({ selectedRole: job });
+  };
+
   render() {
     let breakpoints = [];
     let dateMarks = [];
+    const { selectedRole } = this.state;
 
     let firstDate = new Date(experience[0].startDate);
     firstDate.setMonth(firstDate.getMonth() - 3);
@@ -23,11 +32,13 @@ class Experience extends React.Component {
       const endPercentage = job.endDate ? calcLeft(new Date(job.endDate)) : 100;
       breakpoints.push(
         <div
+          onClick={() => this.selectRole(job)}
           className="experience__timeline-breakpoint"
           style={{
             left: `${startPercentage}%`,
             width: `${endPercentage - startPercentage}%`
           }}
+          key={`${job.title}-${job.company}`}
         >
           <h3 className="experience__timeline-job">
             <span className="experience__timeline-title">{job.title}</span>
@@ -46,6 +57,7 @@ class Experience extends React.Component {
         <div
           className="experience__timeline-date-mark"
           style={{ left: `${calcLeft(new Date(markDate))}%` }}
+          key={markDate}
         >
           <span className="experience__timeline-date-year">
             {markDate.getFullYear()}
@@ -62,31 +74,24 @@ class Experience extends React.Component {
           <div className="experience__timeline-dates">{dateMarks}</div>
         </div>
         <div className="experience__decription">
-          <div className="text-box">
-            <h3 className="heading-tertiary u-margin-bottom-small">Profile</h3>
-            <p className="paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
-              viverra nisl. Curabitur dignissim pharetra enim, ut iaculis nibh
-              interdum facilisis. Nullam ultrices urna ante, in suscipit velit
-              eleifend vitae. Nam eget blandit urna. Aliquam velit quam,
-              imperdiet ac dui quis, placerat lacinia nisi. In auctor est ac
-              diam hendrerit malesuada. Quisque et neque molestie, ornare magna
-              a, tristique risus. Cras egestas quis dolor vitae accumsan.
-              Vestibulum cursus felis a eleifend semper.
-            </p>
+          <div className="text-box experience__role">
+            <h3 className="heading-tertiary u-margin-bottom-small">Role</h3>
+            <p className="paragraph">{selectedRole.description}</p>
+            <ul className="list">
+              {selectedRole.keyItems.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
-          <div className="text-box">
-            <h3 className="heading-tertiary u-margin-bottom-small">Profile</h3>
-            <p className="paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
-              viverra nisl. Curabitur dignissim pharetra enim, ut iaculis nibh
-              interdum facilisis. Nullam ultrices urna ante, in suscipit velit
-              eleifend vitae. Nam eget blandit urna. Aliquam velit quam,
-              imperdiet ac dui quis, placerat lacinia nisi. In auctor est ac
-              diam hendrerit malesuada. Quisque et neque molestie, ornare magna
-              a, tristique risus. Cras egestas quis dolor vitae accumsan.
-              Vestibulum cursus felis a eleifend semper.
-            </p>
+          <div className="text-box experience__stack">
+            <h3 className="heading-tertiary u-margin-bottom-small">
+              Software Stack
+            </h3>
+            <ul className="list">
+              {selectedRole.technologies.map(tool => (
+                <li key={tool}>{tool}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

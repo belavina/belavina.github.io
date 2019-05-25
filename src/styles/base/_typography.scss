@@ -80,3 +80,18 @@ body {
     margin-bottom: 1rem;
   }
 }
+
+.list {
+  font-size: $default-font-size;
+  list-style: none;
+
+  & li {
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+  }
+
+  & li::before {
+    content: "- ";
+    color: $color-secondary-dark;
+  }
+}
