@@ -41,6 +41,10 @@ body {
 }
 
 ::selection {
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: $color-grey-light-1;
+  color: $color-primary;
+}
+
+a {
+  color: $color-secondary;
 }

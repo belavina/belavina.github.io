@@ -31,7 +31,7 @@
     "keyItems": [
       "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
       "delivered MERN-stack based software deployment system (Z3 Systems)",
-      "developed open-source hardware simulation <a href=\"#\">platform</a> (Alteeve Systems)"
+      "developed open-source hardware simulation <a href=\"https://github.com/Seneca-CDOT/simengine\" target=\"_blank\">platform</a> (Alteeve Systems)"
     ],
     "technologies": [
       "NodeJS",
