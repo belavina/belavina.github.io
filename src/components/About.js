@@ -60,7 +60,7 @@ class About extends React.Component {
               {devInfo.description}
             </p>
           </div>
-          {selectedSkill && (
+          {selectedSkill && selectedSkill.description && (
             <div className="text-box">
               <h3 className="heading-tertiary u-margin-bottom-small">
                 {selectedSkill.name}

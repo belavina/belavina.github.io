@@ -3,39 +3,39 @@
     {
       "name": "Python",
       "percentage": "90",
-      "description": "Hello js"
+      "description": "Multithreading, Web-Socket programming, BDD (Behave) & unittest"
     },
     {
       "name": "Javascript",
       "percentage": "80",
-      "description": "Hello py!"
+      "description": "ES6, Babel & WebPack"
     },
     {
       "name": "PHP",
       "percentage": "60",
-      "description": ""
+      "description": "Slim framework, API development"
     },
     {
       "name": "C++/C",
       "percentage": "40",
-      "description": ""
+      "description": "Computer Vision & 3D Meshing Tools"
     },
     {
       "name": "GoLang",
       "percentage": "40",
-      "description": ""
+      "description": "API development"
     }
   ],
   "Frameworks": [
     {
       "name": "ReactJS",
       "percentage": "90",
-      "description": ""
+      "description": "+Redux, Routing and (some) ReactNative experience"
     },
     {
       "name": "NodeJS",
       "percentage": "80",
-      "description": ""
+      "description": "API development"
     }
   ],
   "Databases": [
