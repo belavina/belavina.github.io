@@ -17,23 +17,27 @@ const Timeline = ({ timelineData, selectBreakpoint, selectedBp }) => {
 
   // percentage from the total timeline
   const calcLeft = d => ((d - firstDate) * 100) / timelineSpan;
+  const jobKey = j => `${j.title}-${j.company}-${j.startDate}`;
 
   timelineData.forEach(job => {
     const startPercentage = calcLeft(new Date(job.startDate));
     const endPercentage = job.endDate ? calcLeft(new Date(job.endDate)) : 100;
+    const selectedClass =
+      jobKey(job) == jobKey(selectedBp) ? "timeline__breakpoint--selected" : "";
+
     breakpoints.push(
       <div
         onClick={() => selectBreakpoint(job)}
-        className="timeline__breakpoint"
+        className={`timeline__breakpoint ${selectedClass}`}
         style={{
           left: `${startPercentage}%`,
           width: `${endPercentage - startPercentage}%`
         }}
-        key={`${job.title}-${job.company}`}
+        key={jobKey(job)}
       >
-        <h3 className="timeline-bp-text">
-          <span className="timeline-bp-header">{job.title}</span>
-          <span className="timeline-bp-subheader">{job.company}</span>
+        <h3 className="timeline__bp-header">
+          <span className="timeline__bp-header--main">{job.title}</span>
+          <span className="timeline__bp-header--sub">{job.company}</span>
         </h3>
       </div>
     );
@@ -50,11 +54,11 @@ const Timeline = ({ timelineData, selectBreakpoint, selectedBp }) => {
 
     dateMarks.push(
       <div
-        className="timeline-date-mark"
+        className="timeline__date-mark"
         style={{ left: `${calcLeft(new Date(markDate))}%` }}
         key={markDate}
       >
-        <span className="timeline-date-year">{markDate.getFullYear()}</span>
+        <span className="timeline__year-mark">{markDate.getFullYear()}</span>
       </div>
     );
   }
@@ -63,13 +67,15 @@ const Timeline = ({ timelineData, selectBreakpoint, selectedBp }) => {
     <div className="timeline">
       {breakpoints}
       <div className="timeline__ribbon" />
-      <div className="timeline-dates">{dateMarks}</div>
+      <div className="timeline__dateline">{dateMarks}</div>
     </div>
   );
 };
 
 Timeline.propTypes = {
-  timelineData: PropTypes.array.isRequired
+  timelineData: PropTypes.array.isRequired,
+  selectBreakpoint: PropTypes.func.isRequired,
+  selectedBp: PropTypes.object.isRequired
 };
 
 export default Timeline;
