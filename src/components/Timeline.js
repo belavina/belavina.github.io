@@ -24,16 +24,16 @@ const Timeline = ({ timelineData, selectBreakpoint, selectedBp }) => {
     breakpoints.push(
       <div
         onClick={() => selectBreakpoint(job)}
-        className="experience__timeline-breakpoint"
+        className="timeline__breakpoint"
         style={{
           left: `${startPercentage}%`,
           width: `${endPercentage - startPercentage}%`
         }}
         key={`${job.title}-${job.company}`}
       >
-        <h3 className="experience__timeline-job">
-          <span className="experience__timeline-title">{job.title}</span>
-          <span className="experience__timeline-company">{job.company}</span>
+        <h3 className="timeline-bp-text">
+          <span className="timeline-bp-header">{job.title}</span>
+          <span className="timeline-bp-subheader">{job.company}</span>
         </h3>
       </div>
     );
@@ -50,22 +50,20 @@ const Timeline = ({ timelineData, selectBreakpoint, selectedBp }) => {
 
     dateMarks.push(
       <div
-        className="experience__timeline-date-mark"
+        className="timeline-date-mark"
         style={{ left: `${calcLeft(new Date(markDate))}%` }}
         key={markDate}
       >
-        <span className="experience__timeline-date-year">
-          {markDate.getFullYear()}
-        </span>
+        <span className="timeline-date-year">{markDate.getFullYear()}</span>
       </div>
     );
   }
 
   return (
-    <div className="experience__timeline">
+    <div className="timeline">
       {breakpoints}
-      <div className="experience__timeline-history" />
-      <div className="experience__timeline-dates">{dateMarks}</div>
+      <div className="timeline__ribbon" />
+      <div className="timeline-dates">{dateMarks}</div>
     </div>
   );
 };
