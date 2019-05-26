@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Seniour Developer",
+    "company": "Oracle",
+    "startDate": "2015-09-01",
+    "endDate": "2015-11-01",
+    "description": "Took an active role in development of media-sharing platform for provincial intranet system",
+    "keyItems": [
+      "implemented comprehensive media delivery system",
+      "performance/optimization, API development",
+      "AWS development including lambda/API getway, S3"
+    ],
+    "technologies": [
+      "PHP/Slim",
+      "JavaScript",
+      "HTML5",
+      "CSS",
+      "WordPress",
+      "Golang",
+      "Docker/Vagrant",
+      "MySQL",
+      "Redis",
+      "AWS"
+    ]
+  },
+  {
+    "title": "Technician",
+    "company": "Oracle",
+    "startDate": "2015-11-01",
+    "endDate": "2015-12-01",
+    "description": "Took an active role in development of media-sharing platform for provincial intranet system",
+    "keyItems": [
+      "implemented comprehensive media delivery system",
+      "performance/optimization, API development",
+      "AWS development including lambda/API getway, S3"
+    ],
+    "technologies": [
+      "PHP/Slim",
+      "JavaScript",
+      "HTML5",
+      "CSS",
+      "WordPress",
+      "Golang",
+      "Docker/Vagrant",
+      "MySQL",
+      "Redis",
+      "AWS"
+    ]
+  },
+  {
+    "title": "Jr. Web Developer",
+    "company": "Ontario Public Service",
+    "startDate": "2015-12-01",
+    "endDate": "2016-01-01",
+    "description": "Took an active role in development of media-sharing platform for provincial intranet system",
+    "keyItems": [
+      "implemented comprehensive media delivery system",
+      "performance/optimization, API development",
+      "AWS development including lambda/API getway, S3"
+    ],
+    "technologies": [
+      "PHP/Slim",
+      "JavaScript",
+      "HTML5",
+      "CSS",
+      "WordPress",
+      "Golang",
+      "Docker/Vagrant",
+      "MySQL",
+      "Redis",
+      "AWS"
+    ]
+  },
+  {
+    "title": "DevOps Specialist",
+    "company": "McDonalds",
+    "startDate": "2016-01-01",
+    "endDate": "2016-02-01",
+    "description": "Took an active role in development of media-sharing platform for provincial intranet system",
+    "keyItems": [
+      "implemented comprehensive media delivery system",
+      "performance/optimization, API development",
+      "AWS development including lambda/API getway, S3"
+    ],
+    "technologies": [
+      "PHP/Slim",
+      "JavaScript",
+      "HTML5",
+      "CSS",
+      "WordPress",
+      "Golang",
+      "Docker/Vagrant",
+      "MySQL",
+      "Redis",
+      "AWS"
+    ]
+  },
+  {
+    "title": "Software Developer",
+    "company": "Seneca College",
+    "startDate": "2016-02-01",
+    "endDate": "2017-05-25",
+
+    "description": "As a Software Developer at OSTEP team, I have successfully completed 3 projects using diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
+    "keyItems": [
+      "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
+      "delivered MERN-stack based software deployment system (Z3 Systems)",
+      "developed open-source hardware simulation <a href=\"https://github.com/Seneca-CDOT/simengine\" target=\"_blank\">platform</a> (Alteeve Systems)"
+    ],
+    "technologies": [
+      "NodeJS",
+      "ReactJS/Redux",
+      "Python3",
+      "Docker",
+      "MongoDB",
+      "Neo4J",
+      "Redis"
+    ]
+  },
+  {
+    "title": "Software Developer",
+    "company": "Seneca College",
+    "startDate": "2017-05-25",
+    "endDate": "2019-05-25",
+
+    "description": "As a Software Developer at OSTEP team, I have successfully completed 3 projects using diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
+    "keyItems": [
+      "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
+      "delivered MERN-stack based software deployment system (Z3 Systems)",
+      "developed open-source hardware simulation <a href=\"https://github.com/Seneca-CDOT/simengine\" target=\"_blank\">platform</a> (Alteeve Systems)"
+    ],
+    "technologies": [
+      "NodeJS",
+      "ReactJS/Redux",
+      "Python3",
+      "Docker",
+      "MongoDB",
+      "Neo4J",
+      "Redis"
+    ]
+  },
+  {
+    "title": "Software Developer",
+    "company": "Google",
+    "startDate": "2019-05-25",
+    "description": "As a Software Developer at OSTEP team, I have successfully completed 3 projects using diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
+    "keyItems": [
+      "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
+      "delivered MERN-stack based software deployment system (Z3 Systems)",
+      "developed open-source hardware simulation <a href=\"https://github.com/Seneca-CDOT/simengine\" target=\"_blank\">platform</a> (Alteeve Systems)"
+    ],
+    "technologies": [
+      "NodeJS",
+      "ReactJS/Redux",
+      "Python3",
+      "Docker",
+      "MongoDB",
+      "Neo4J",
+      "Redis"
+    ]
+  }
+]

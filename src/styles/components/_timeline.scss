@@ -20,7 +20,6 @@
     z-index: 1;
     transform-origin: right;
     cursor: pointer;
-    border-left: 2px solid rgba($color-secondary-dark, 0.5);
 
     // -- breakpoint 45degree marks (for selection & hover area)
     &::after {
@@ -46,20 +45,23 @@
       );
     }
 
-    // &::before {
-    //   content: "";
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      height: 70%;
 
-    // position: absolute;
-    // top: calc(5.2rem + -0.5rem);
+      border-left: solid 2px rgba($color-secondary-dark, 0.5);
+      z-index: -10;
+    }
 
-    // width: 2rem;
-    // height: 2rem;
-    // background-color: $color-primary;
-    // border: 2px solid $color-grey-light-2;
-    // z-index: 2;
-    // transform: translateX(-1.05rem) rotate(45deg);
-
-    // }
+    &--overflown::before,
+    &--overflown + &::before {
+      height: 50%;
+      opacity: 0.3;
+    }
   }
 
   // -- breakpoint text
@@ -77,6 +79,52 @@
     &--sub {
       font-size: 1.1rem;
       color: $color-grey-dark-2;
+    }
+
+    &--overflown {
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 0.3rem;
+      height: 100%;
+      position: relative;
+
+      &--main {
+        padding: 1px;
+        display: block;
+        position: relative;
+
+        font-size: 1rem;
+        color: $color-grey-light-2;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+
+        width: 18rem;
+      }
+
+      &--main::before {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $color-primary;
+        border-bottom: 2px solid $color-secondary;
+
+        // to center (if width 100%, then left would be 50%)
+        height: 100%;
+        width: 90%;
+        left: -40%;
+
+        transform: translateX(50%) skewX(45deg);
+      }
+
+      &--sub {
+        display: none;
+      }
     }
   }
 
@@ -116,7 +164,7 @@
       width: 2px;
 
       height: 2rem;
-      background-color: $color-grey-dark-1;
+      border-left: 2px solid $color-grey-dark-1;
     }
 
     // year text (201X)

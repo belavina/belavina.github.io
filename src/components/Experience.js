@@ -24,7 +24,7 @@ class Experience extends React.Component {
         <div className="experience__decription">
           <div className="text-box experience__role">
             <h3 className="heading-tertiary u-margin-bottom-small">
-              Role @{selectedRole.company}
+              {selectedRole.title} @{selectedRole.company}
             </h3>
             <p className="paragraph">{selectedRole.description}</p>
             <ul className="list">
