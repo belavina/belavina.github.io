@@ -1,12 +1,15 @@
 import React, { Fragment } from "react";
-// import { CSSTransition } from "react-transition-group";
+import ReactCSSTransitionReplace from "react-css-transition-replace";
 
 // - local imports
 import skills from "./data/skills";
 import devInfo from "./data/devInfo";
 
 class About extends React.Component {
-  state = { centered: true, selectedSkill: null };
+  state = {
+    centered: true,
+    selectedSkill: null
+  };
 
   updateDescription = skill => {
     this.setState({
@@ -31,11 +34,10 @@ class About extends React.Component {
           {skills[skillType].map(skill => (
             <div
               key={`${skill.name}-${skillType}`}
-              className={`about__skills__item about__skills__item--${
+              className={`about__skill-item about__skill-item--${
                 skill.percentage
               }`}
               onMouseEnter={() => this.updateDescription(skill)}
-              onMouseLeave={this.clearDescription}
             >
               {skill.name}
             </div>
@@ -49,7 +51,7 @@ class About extends React.Component {
     return (
       <section className="about">
         <div className="about__overview">
-          <div className="text-box">
+          <div className="text-box u-fade-in-element">
             <h3 className="heading-tertiary u-margin-bottom-small">Profile</h3>
             <p className="paragraph">
               <span className="paragraph__block">
@@ -61,12 +63,14 @@ class About extends React.Component {
             </p>
           </div>
           {selectedSkill && selectedSkill.description && (
-            <div className="text-box">
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                {selectedSkill.name}
-              </h3>
-              <p className="paragraph">{selectedSkill.description}</p>
-            </div>
+            <ReactCSSTransitionReplace transitionName="u-fade-in">
+              <div className="text-box" key={selectedSkill.name}>
+                <h3 className="heading-tertiary u-margin-bottom-small">
+                  {selectedSkill.name}
+                </h3>
+                <p className="paragraph">{selectedSkill.description}</p>
+              </div>
+            </ReactCSSTransitionReplace>
           )}
         </div>
         <div className="about__skills">{skillBars}</div>

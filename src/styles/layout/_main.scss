@@ -10,70 +10,69 @@
 
   &__skills {
     text-transform: uppercase;
-
     min-width: 40%;
+  }
 
-    &__item {
-      position: relative;
-      cursor: pointer;
-      padding: 0.5rem;
-      color: $color-primary-dark;
-      margin-bottom: 1.1rem;
+  &__skill-item {
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: $color-primary-dark;
+    margin-bottom: 1.1rem;
+    background-image: linear-gradient(
+      to right,
+      $color-tertiary,
+      $color-secondary
+    );
+
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out,
+      width 0.7s ease-out;
+
+    opacity: 0.8;
+    letter-spacing: 0.4rem;
+
+    &--100 {
+      @include bar(100);
+    }
+    &--90 {
+      @include bar(90);
+    }
+    &--80 {
+      @include bar(80);
+    }
+    &--70 {
+      @include bar(70);
+    }
+    &--60 {
+      @include bar(60);
+    }
+    &--50 {
+      @include bar(50);
+    }
+    &--40 {
+      @include bar(40);
+    }
+    &--30 {
+      @include bar(30);
+    }
+    &--20 {
+      @include bar(20);
+    }
+    &--10 {
+      @include bar(10);
+    }
+
+    &--selected {
       background-image: linear-gradient(
         to right,
         $color-tertiary,
         $color-secondary
       );
+    }
 
-      transition: transform 0.7s ease-out, opacity 0.7s ease-out,
-        width 0.7s ease-out;
-
-      opacity: 0.8;
-      letter-spacing: 0.4rem;
-
-      &--100 {
-        @include bar(100);
-      }
-      &--90 {
-        @include bar(90);
-      }
-      &--80 {
-        @include bar(80);
-      }
-      &--70 {
-        @include bar(70);
-      }
-      &--60 {
-        @include bar(60);
-      }
-      &--50 {
-        @include bar(50);
-      }
-      &--40 {
-        @include bar(40);
-      }
-      &--30 {
-        @include bar(30);
-      }
-      &--20 {
-        @include bar(20);
-      }
-      &--10 {
-        @include bar(10);
-      }
-
-      &--selected {
-        background-image: linear-gradient(
-          to right,
-          $color-tertiary,
-          $color-secondary
-        );
-      }
-
-      &:hover {
-        opacity: 1;
-        transform: scaleX(1.1);
-      }
+    &:hover {
+      opacity: 1;
+      transform: scaleX(1.1);
     }
   }
 }

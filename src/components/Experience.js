@@ -1,4 +1,7 @@
 import React from "react";
+// import ReactCSSTransitionReplace from "react-css-transition-replace";
+
+// - local imports
 import experience from "./data/experience";
 import Timeline from "./Timeline";
 
@@ -21,7 +24,8 @@ class Experience extends React.Component {
           selectBreakpoint={this.selectRole}
           selectedBp={selectedRole}
         />
-        <div className="experience__decription">
+
+        <div className="experience__decription u-fade-in-element">
           <div className="text-box experience__role">
             <h3 className="heading-tertiary u-margin-bottom-small">
               {selectedRole.title} @{selectedRole.company}

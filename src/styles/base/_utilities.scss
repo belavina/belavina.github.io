@@ -25,3 +25,27 @@
 .u-margin-top-huge {
   margin-top: 10rem !important;
 }
+
+.u-fade-in-element {
+  animation: fadeIn 1s forwards;
+}
+
+.u-fade-in-leave {
+  opacity: 1;
+}
+.u-fade-in-leave.u-fade-in-leave-active {
+  opacity: 0;
+}
+
+.u-fade-in-enter {
+  opacity: 0;
+}
+.u-fade-in-enter.u-fade-in-enter-active {
+  opacity: 1;
+  /* Delay the enter animation until the leave completes */
+  transition: opacity 0.3s ease-in;
+}
+
+.u-fade-in-height {
+  transition: height 0.6s ease-in-out;
+}
