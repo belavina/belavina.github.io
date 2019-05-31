@@ -3,6 +3,7 @@ const CleanPlugin = require("clean-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const commonPaths = require("./common-paths");
+const Dotenv = require("dotenv-webpack");
 
 const config = {
   entry: {
@@ -105,7 +106,8 @@ const config = {
       template: commonPaths.template,
       favicon: commonPaths.favicon,
       inject: true
-    })
+    }),
+    new Dotenv()
   ]
 };
 

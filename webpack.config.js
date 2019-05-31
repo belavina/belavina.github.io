@@ -7,7 +7,7 @@ module.exports = env => {
       .filter(addon => Boolean(addon))
       .map(addon => require(`./config/addons/webpack.${addon}.js`));
   };
-
+  console.log(env);
   const envConfig = require(`./config/webpack.${env.env}.config`);
 
   return webpackMerge(commonConfig, envConfig, ...determineAddons(env.addons));
