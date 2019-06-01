@@ -68,6 +68,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "emailjs-com": "^2.3.2",
+    "hash-source": "^1.0.4",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
     "react-css-transition-replace": "^3.0.3",

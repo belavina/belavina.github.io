@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "./Navigation";
 
 class Header extends React.Component {
-  state = { centered: window.location.pathname == "/" };
+  state = { centered: window.location.hash == "#/" };
 
   render() {
     const headerPosition = this.state.centered
