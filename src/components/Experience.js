@@ -37,7 +37,7 @@ class Experience extends React.Component {
           selectBreakpoint={this.selectRole}
           selectedBp={selectedRole}
         />
-        <div className="experience__decription u-fade-in-element">
+        <div className="experience__description u-fade-in-element">
           <div className="text-box experience__role">
             <h3 className="heading-tertiary u-margin-bottom-small">
               {selectedRole.title} @{selectedRole.company}
