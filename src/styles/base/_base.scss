@@ -48,3 +48,11 @@ body {
 a {
   color: $color-secondary;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+input:required {
+  box-shadow: none;
+}
