@@ -36,6 +36,7 @@ class Timeline extends React.Component {
           job={job}
           selectedBp={selectedBp}
           bpKey={this.bpKey}
+          key={this.bpKey(job)}
         />
       );
     });

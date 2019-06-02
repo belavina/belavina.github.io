@@ -77,4 +77,31 @@
   &::after {
     @include bgEffect;
   }
+
+  &--success {
+    background-color: rgba($color-primary, 0.6);
+    border: 1px solid rgba($color-secondary, 0.6);
+    transition: all 0.4s ease-out;
+
+    &:disabled {
+      color: $color-secondary;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &--error {
+    background-color: rgba($color-secondary, 0.6);
+    transition: all 0.4s ease-out;
+
+    &:disabled {
+      color: $color-grey-light-2;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
 }

@@ -59,7 +59,7 @@ class Experience extends React.Component {
             </h3>
             <ul className="list">
               {selectedRole.technologies.map(tool => (
-                <li key={tool}>{tool}</li>
+                <li key={`${selectedRole.company}${tool}`}>{tool}</li>
               ))}
             </ul>
           </div>

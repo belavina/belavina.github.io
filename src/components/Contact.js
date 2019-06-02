@@ -10,7 +10,9 @@ class Contact extends React.Component {
   state = {
     subject: "",
     body: "",
-    btnDisabled: false
+    btnDisabled: false,
+    btnStatusCls: "",
+    btnText: "contact"
   };
 
   handleChange = event =>
@@ -28,19 +30,28 @@ class Contact extends React.Component {
         process.env.EMAILJS_USER_ID
       )
       .then(
-        response => {
-          console.log("SUCCESS!", response.status, response.text);
+        // success
+        () => {
+          this.setState({ btnStatusCls: "btn--success", btnText: "success ✓" });
         },
-        error => {
-          console.log("FAILED...", error);
+        // error
+        () => {
+          this.setState({ btnStatusCls: "btn--error", btnText: "error ✗" });
         }
       )
       .then(() => {
-        this.setState({ btnDisabled: false });
+        setTimeout(() => {
+          this.setState({
+            btnDisabled: false,
+            btnStatusCls: "",
+            btnText: "contact"
+          });
+        }, 3000);
       });
   };
 
   render() {
+    const { btnStatusCls, btnDisabled, btnText } = this.state;
     return (
       <section className="contact">
         <div className="email">
@@ -57,8 +68,8 @@ class Contact extends React.Component {
               handleChange={this.handleChange}
             />
             <div className="form__group">
-              <button className="btn" disabled={this.state.btnDisabled}>
-                contact
+              <button className={`btn ${btnStatusCls}`} disabled={btnDisabled}>
+                {btnText}
               </button>
             </div>
           </form>
