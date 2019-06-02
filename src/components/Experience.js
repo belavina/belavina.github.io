@@ -14,6 +14,19 @@ class Experience extends React.Component {
     this.setState({ selectedRole: job });
   };
 
+  calculateDateRange = () => {
+    const { selectedRole } = this.state;
+
+    const start = new Date(selectedRole.startDate);
+    const end =
+      "endDate" in selectedRole ? new Date(selectedRole.endDate) : new Date();
+
+    const formatDate = d =>
+      `${d.toLocaleDateString("en-US", { year: "numeric", month: "short" })}`;
+
+    return `${formatDate(start)} — ${formatDate(end)}`;
+  };
+
   render() {
     const { selectedRole } = this.state;
 
@@ -24,12 +37,15 @@ class Experience extends React.Component {
           selectBreakpoint={this.selectRole}
           selectedBp={selectedRole}
         />
-
         <div className="experience__decription u-fade-in-element">
           <div className="text-box experience__role">
             <h3 className="heading-tertiary u-margin-bottom-small">
               {selectedRole.title} @{selectedRole.company}
+              <span className="heading-tertiary--sub">
+                {this.calculateDateRange()}
+              </span>
             </h3>
+
             <p className="paragraph">{selectedRole.description}</p>
             <ul className="list">
               {selectedRole.keyItems.map(item => (

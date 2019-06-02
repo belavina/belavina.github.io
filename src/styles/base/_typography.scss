@@ -64,6 +64,16 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   color: $color-secondary-dark;
+
+  &--sub {
+    display: block;
+    font-size: 1.2rem;
+    text-transform: none;
+    font-style: italic;
+    font-weight: 200;
+    color: $color-grey-light-2;
+    margin-left: 1.5rem;
+  }
 }
 
 .paragraph {
