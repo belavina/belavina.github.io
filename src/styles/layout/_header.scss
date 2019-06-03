@@ -12,10 +12,20 @@
 
     .heading-primary--main {
       animation: none;
+      @include headerTextClip;
     }
 
     .heading-primary--sub {
       animation: none;
+    }
+
+    @include respond(tab-land) {
+      margin-bottom: 1rem;
+    }
+
+    @include respond(phone) {
+      display: inline-block;
+      width: 100%;
     }
   }
 

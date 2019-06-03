@@ -8,6 +8,10 @@
 .about {
   display: flex;
 
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
   &__skills {
     text-transform: uppercase;
     min-width: 40%;
@@ -85,13 +89,23 @@
   align-items: center;
   margin-top: 10rem;
 
+  @include respond(tab-land) {
+    margin-top: 8rem;
+  }
+
   &__description {
     display: flex;
     width: 100%;
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
 
   &__role {
     width: 50%;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 }
 
@@ -108,6 +122,14 @@
   width: 60%;
   padding: 3rem 5rem;
   animation: fadeIn 1s;
+
+  @include respond(tab-land) {
+    width: 80%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
 }
 
 .social {

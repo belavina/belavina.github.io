@@ -47,16 +47,21 @@ class Timeline extends React.Component {
     for (let i = 0; i <= yearsExperience; i++) {
       let markDate = new Date(new Date().getFullYear(), 0, 1);
       markDate.setFullYear(new Date().getFullYear() - i);
+      const percentFromLeft = calcLeft(new Date(markDate));
 
-      dateMarks.push(
-        <div
-          className="timeline__date-mark"
-          style={{ left: `${calcLeft(new Date(markDate))}%` }}
-          key={markDate}
-        >
-          <span className="timeline__year-mark">{markDate.getFullYear()}</span>
-        </div>
-      );
+      if (percentFromLeft >= 0) {
+        dateMarks.push(
+          <div
+            className="timeline__date-mark"
+            style={{ left: `${percentFromLeft}%` }}
+            key={markDate}
+          >
+            <span className="timeline__year-mark">
+              {markDate.getFullYear()}
+            </span>
+          </div>
+        );
+      }
     }
 
     return (

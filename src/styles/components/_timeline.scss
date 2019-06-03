@@ -6,6 +6,10 @@
   position: relative;
   display: block;
 
+  @include respond(tab-land) {
+    height: 6rem;
+  }
+
   // -- breakpoint is a time-span area place on the timeline
   &__breakpoint {
     opacity: 0;
@@ -20,6 +24,10 @@
     z-index: 1;
     transform-origin: right;
     cursor: pointer;
+
+    @include respond(tab-land) {
+      height: 10rem;
+    }
 
     // -- breakpoint 45degree marks (for selection & hover area)
     &::after {
@@ -70,14 +78,25 @@
     font-weight: 200;
     letter-spacing: 0.3rem;
 
+    @include respond(phone) {
+      display: none;
+    }
+
     &--main {
       display: block;
       font-size: 1.7rem;
+      @include respond(tab-land) {
+        font-size: 1.2rem;
+      }
+
       color: $color-grey-light-2;
     }
 
     &--sub {
       font-size: 1.1rem;
+      @include respond(tab-land) {
+        font-size: 1rem;
+      }
       color: $color-grey-dark-2;
     }
 
@@ -151,6 +170,9 @@
 
     background-color: $color-grey-dark-1;
     height: 2px;
+    @include respond(tab-land) {
+      top: 2.5rem;
+    }
   }
 
   // -- marks on dateline indicating years

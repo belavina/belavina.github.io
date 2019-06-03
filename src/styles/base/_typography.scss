@@ -24,7 +24,13 @@ body {
     font-size: 4rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+
     animation: textBgClip 1.4s ease-out forwards, moveInLeft 1.4s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 3rem;
+    }
   }
 
   &--sub {
