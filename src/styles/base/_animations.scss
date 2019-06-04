@@ -74,10 +74,12 @@
   }
 }
 
-@keyframes overlay {
-  to {
-    opacity: 1;
-    background-color: #0e0c0e;
+// hack to do delays between infinite iterations
+// https://css-tricks.com/css-keyframe-animation-delay-iterations/
+@keyframes videoOverlay {
+  30%,
+  100% {
+    opacity: 0;
   }
 }
 

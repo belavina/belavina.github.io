@@ -14,6 +14,7 @@ const Background = () => {
         className={`bg-video__content ${modifierCls}`}
         autoPlay={autoPlay}
         muted
+        loop
       >
         <source src={"/videos/particles_720.mp4"} type="video/mp4" />
         Your browser is not supported!

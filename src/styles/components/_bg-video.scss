@@ -22,12 +22,12 @@
 
   &__overlay {
     position: absolute;
-    opacity: 0;
+    opacity: 0.9;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background-color: $color-almost-black;
-    animation: overlay 6s forwards 20s;
+    animation: videoOverlay 26s infinite;
   }
 }
