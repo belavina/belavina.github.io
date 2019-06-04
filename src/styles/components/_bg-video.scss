@@ -15,5 +15,9 @@
     // similar to background size - cover
     object-fit: cover;
     // animation: videoChange 29s forwards;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 }
