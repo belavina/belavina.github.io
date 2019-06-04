@@ -15,7 +15,7 @@
     // similar to background size - cover
     object-fit: cover;
 
-    @include respond(phone) {
+    &--hidden {
       display: none;
     }
   }

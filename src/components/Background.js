@@ -6,13 +6,19 @@ const Background = () => {
     autoPlay = false;
   }
 
+  const modifierCls = autoPlay ? "" : "bg-video__content--hidden";
+
   return (
     <div className="bg-video">
-      <video className="bg-video__content" autoPlay={autoPlay} muted>
+      <video
+        className={`bg-video__content ${modifierCls}`}
+        autoPlay={autoPlay}
+        muted
+      >
         <source src={"/videos/particles_720.mp4"} type="video/mp4" />
         Your browser is not supported!
       </video>
-      <div className="bg-video__overlay" />
+      {autoPlay && <div className="bg-video__overlay" />}
     </div>
   );
 };
