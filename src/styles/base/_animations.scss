@@ -74,20 +74,10 @@
   }
 }
 
-@keyframes videoChange {
-  0% {
+@keyframes overlay {
+  to {
     opacity: 1;
-    filter: grayscale(1) opacity(0.5) brightness(0.4) contrast(0.7);
-  }
-
-  /* finish */
-  95% {
-    filter: grayscale(1) brightness(0.4) contrast(1.05);
-  }
-
-  100% {
-    opacity: 0.2;
-    filter: opacity(0.3) grayscale(1) brightness(0.4) contrast(1.05);
+    background-color: #0e0c0e;
   }
 }
 

@@ -8,10 +8,11 @@ const Background = () => {
 
   return (
     <div className="bg-video">
-      <video className="bg-video__content" autoPlay={autoPlay} muted loop>
+      <video className="bg-video__content" autoPlay={autoPlay} muted>
         <source src={"/videos/particles_720.mp4"} type="video/mp4" />
         Your browser is not supported!
       </video>
+      <div className="bg-video__overlay" />
     </div>
   );
 };

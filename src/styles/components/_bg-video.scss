@@ -14,10 +14,20 @@
     // occupy the entire space while maintaining the aspect-ratio
     // similar to background size - cover
     object-fit: cover;
-    // animation: videoChange 29s forwards;
 
     @include respond(phone) {
       display: none;
     }
+  }
+
+  &__overlay {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-almost-black;
+    animation: overlay 6s forwards 20s;
   }
 }
