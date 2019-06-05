@@ -100,7 +100,7 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new ExtractTextPlugin("[name].css"),
-    new CleanPlugin(["../public"], { allowExternal: true }),
+    // new CleanPlugin(["../public"], { allowExternal: true }),
     new HtmlPlugin({
       filename: "index.html",
       template: commonPaths.template,
