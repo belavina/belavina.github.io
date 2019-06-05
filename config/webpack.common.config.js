@@ -1,5 +1,5 @@
 const webpack = require("webpack");
-const CleanPlugin = require("clean-webpack-plugin");
+// const CleanPlugin = require("clean-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const commonPaths = require("./common-paths");
