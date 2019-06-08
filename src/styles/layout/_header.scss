@@ -1,3 +1,5 @@
+// Page title
+
 .header {
   position: relative;
   display: flex;
@@ -6,6 +8,7 @@
   flex-wrap: wrap;
   align-content: center;
 
+  // When on any page
   &--top {
     margin-bottom: 6rem;
     animation: fadeIn 0.8s ease-in;
@@ -29,6 +32,7 @@
     }
   }
 
+  // Root, display in the middle
   &--centered {
     @include absCenter;
   }

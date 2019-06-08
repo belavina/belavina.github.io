@@ -105,3 +105,53 @@
     }
   }
 }
+
+// button group with skewed individual buttons
+.btn-group {
+  cursor: pointer;
+
+  // create "diamond" icon background (skewed buttons effect)
+  &:nth-child(even) &__icon-box {
+    transform: skew($skew-social) rotate($rotate-social);
+  }
+
+  &:nth-child(odd) &__icon-box {
+    transform: skew(-$skew-social) rotate(-$rotate-social);
+  }
+
+  // undo skew for the nested icon
+  &:nth-child(even) svg {
+    transform: skew(-$skew-social) rotate(-$rotate-social);
+  }
+
+  &:nth-child(odd) svg {
+    transform: skew($skew-social) rotate($rotate-social);
+  }
+
+  // box around icon & svg properties
+  &__icon-box {
+    border: 1px solid transparent;
+    padding: 2rem;
+
+    &::after {
+      @include bgEffect;
+    }
+
+    & > svg {
+      height: 4.5rem;
+      width: 4.5rem;
+      fill: rgba($color-secondary, 0.7);
+    }
+  }
+
+  &__icon-box:hover {
+    box-shadow: 0 0.6rem 1rem rgba($color-black, 0.2); /* x y blur color */
+    &::after {
+      @include bgEffectHover;
+    }
+
+    & > svg {
+      fill: rgba($color-secondary, 1);
+    }
+  }
+}

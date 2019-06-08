@@ -1,6 +1,7 @@
-////////////////////////
-// About Section
+// Layout on each page
 
+////////////////////////
+// About Page
 .about {
   display: flex;
 
@@ -18,7 +19,7 @@
 }
 
 ////////////////////////
-// About Section
+// Experience Page
 .experience {
   display: flex;
   flex-direction: column;
@@ -46,82 +47,32 @@
 }
 
 ////////////////////
-// Email section
+// Conact page
 .contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.email {
-  width: 60%;
-  padding: 3rem 5rem;
-  animation: fadeIn 1s;
+  &__email {
+    width: 60%;
+    padding: 3rem 5rem;
+    animation: fadeIn 1s;
 
-  @include respond(tab-land) {
-    width: 80%;
-  }
+    @include respond(tab-land) {
+      width: 80%;
+    }
 
-  @include respond(phone) {
-    width: 100%;
-  }
-}
-
-.social {
-  flex-grow: 1;
-  padding: 3rem 5rem;
-  display: flex;
-  animation: fadeIn 1s 0.5s;
-  animation-fill-mode: backwards;
-
-  &__link {
-    cursor: pointer;
-  }
-
-  // create "diamond" icon background
-  &__link:nth-child(even) &__icon-box {
-    transform: skew($skew-social) rotate($rotate-social);
-  }
-
-  &__link:nth-child(odd) &__icon-box {
-    transform: skew(-$skew-social) rotate(-$rotate-social);
-  }
-
-  // box around icon
-  &__icon-box {
-    border: 1px solid transparent;
-    padding: 2rem;
-
-    &::after {
-      @include bgEffect;
+    @include respond(phone) {
+      width: 100%;
     }
   }
 
-  &__icon-box:hover {
-    box-shadow: 0 0.6rem 1rem rgba($color-black, 0.2); /* x y blur color */
-    &::after {
-      @include bgEffectHover;
-    }
-  }
-
-  &__icon-box:hover &__icon {
-    fill: rgba($color-secondary, 1);
-  }
-
-  // svg icon
-  &__icon {
-    height: 4.5rem;
-    width: 4.5rem;
-    fill: rgba($color-secondary, 0.7);
-  }
-
-  // undo skew for the nested icon
-  &__link:nth-child(even) &__icon {
-    transform: skew(-$skew-social) rotate(-$rotate-social);
-  }
-
-  &__link:nth-child(odd) &__icon {
-    transform: skew($skew-social) rotate($rotate-social);
+  &__social {
+    flex-grow: 1;
+    padding: 3rem 5rem;
+    display: flex;
+    animation: fadeIn 1s 0.5s;
+    animation-fill-mode: backwards;
   }
 }

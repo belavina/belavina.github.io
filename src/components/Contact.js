@@ -54,7 +54,7 @@ class Contact extends React.Component {
     const { btnStatusCls, btnDisabled, btnText } = this.state;
     return (
       <section className="contact">
-        <div className="email">
+        <div className="contact__email">
           <form action="#" className="form" onSubmit={this.sendEmail}>
             <ContactInput
               placeholder="Email Subject"
@@ -74,7 +74,7 @@ class Contact extends React.Component {
             </div>
           </form>
         </div>
-        <div className="social">
+        <div className="contact__social">
           {social.map(boxDetails => (
             <SocialBox boxDetails={boxDetails} key={boxDetails.icon} />
           ))}
