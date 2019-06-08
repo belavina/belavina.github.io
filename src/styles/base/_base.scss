@@ -1,7 +1,7 @@
-/* Start clean */
+/* Base .css is defined here */
 
 *,
-*::after, /* include pseudo elements */
+*::after,
 *::before {
   margin: 0;
   padding: 0;

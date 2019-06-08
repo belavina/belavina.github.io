@@ -1,3 +1,6 @@
+// Horizontal progress bar with animation and % label
+// (see abstract/_mixins.scss for bar animation details)
+
 .progress-bar {
   position: relative;
   cursor: pointer;
@@ -16,6 +19,7 @@
   opacity: 0.8;
   letter-spacing: 0.4rem;
 
+  // Bar completion percentage classes:
   &--100 {
     @include bar(100);
   }

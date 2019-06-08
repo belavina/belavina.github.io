@@ -11,13 +11,13 @@ const Navigation = ({ moveHeaderUp }) => {
 
   return (
     <nav className="sidebar">
-      <ul className="side-nav">
+      <ul className="main-nav">
         {navItems.map(item => (
-          <li className="side-nav__item" key={item.path}>
+          <li className="main-nav__item" key={item.path}>
             <Link
               to={item.path}
               onClick={moveHeaderUp}
-              className="side-nav__link"
+              className="main-nav__link"
             >
               {item.title}
             </Link>

@@ -1,3 +1,4 @@
+// For centering element (e.g. dev title header on "/" path)
 @mixin absCenter {
   position: absolute;
   top: 50%;
@@ -5,6 +6,7 @@
   transform: translate(-50%, -50%);
 }
 
+// background effects for buttons
 @mixin bgEffect {
   content: "";
   // transform: scale(1.2);
@@ -21,6 +23,7 @@
   transition: all 0.2s ease-out;
 }
 
+// background effects for buttons on hover
 @mixin bgEffectHover {
   // disappearing background
   transform: scale(1);
@@ -29,6 +32,40 @@
   // border flashing effect
   border: 1px solid $color-secondary;
   animation: removeBorder 1s forwards;
+}
+
+// progress bar with desired percentage from 0%->100%
+@mixin bar($percentage) {
+  // percentage label with growing counter
+  &::before {
+    color: $color-tertiary;
+    position: absolute;
+    left: -2.5rem;
+    content: "#{$percentage}%";
+    @include counter($percentage);
+
+    transform: rotate(270deg);
+    font-size: 0.9rem;
+  }
+
+  max-width: $percentage * 1%;
+  width: 0;
+  opacity: 0;
+
+  // horizontal bar expanding
+  @include barAnimation($percentage);
+}
+
+// Gradient for header element
+@mixin headerTextClip {
+  background: linear-gradient(
+    to bottom,
+    rgba($color-secondary, 0.8),
+    rgba($color-tertiary, 1)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 // MEDIA QUERY MANAGER
@@ -75,33 +112,4 @@
       @content;
     } // 1800
   }
-}
-
-@mixin bar($percentage) {
-  &::before {
-    color: $color-tertiary;
-    position: absolute;
-    left: -2.5rem;
-    content: "#{$percentage}%";
-    @include counter($percentage);
-
-    transform: rotate(270deg);
-    font-size: 0.9rem;
-  }
-
-  max-width: $percentage * 1%;
-  width: 0;
-  opacity: 0;
-  @include barAnimation($percentage);
-}
-
-@mixin headerTextClip {
-  background: linear-gradient(
-    to bottom,
-    rgba($color-secondary, 0.8),
-    rgba($color-tertiary, 1)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
