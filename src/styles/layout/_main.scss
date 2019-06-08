@@ -16,7 +16,7 @@
     text-transform: uppercase;
     min-width: 40%;
     @include respond(tab-land) {
-      padding: 1.5rem 2.5rem;
+      padding: 1.5rem 2.7rem;
     }
   }
 
@@ -80,6 +80,9 @@
     &:hover {
       opacity: 1;
       transform: scaleX(1.1);
+      @include respond(tab-land) {
+        transform: scaleX(1.05);
+      }
     }
   }
 }
