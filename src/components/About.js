@@ -34,9 +34,7 @@ class About extends React.Component {
           {skills[skillType].map(skill => (
             <div
               key={`${skill.name}-${skillType}`}
-              className={`about__skill-item about__skill-item--${
-                skill.percentage
-              }`}
+              className={`progress-bar progress-bar--${skill.percentage}`}
               onMouseEnter={() => this.updateDescription(skill)}
             >
               {skill.name}
