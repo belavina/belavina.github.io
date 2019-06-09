@@ -5,7 +5,12 @@ import PropTypes from "prop-types";
  * Box with an icon linking to social media
  */
 const SocialBox = ({ boxDetails }) => (
-  <a href={boxDetails.link} className="btn-group" target="_blank">
+  <a
+    href={boxDetails.link}
+    className="btn-group"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <div className="btn-group__icon-box">
       <svg>
         <use xlinkHref={`/images/sprite.svg#${boxDetails.icon}`} />
