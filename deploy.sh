@@ -12,6 +12,7 @@ npm run build:prod
 
 echo "-> pushing changes"
 cd $prod_dir;
+   echo "belavina.me" > CNAME;
    git add --all;
    PRE_COMMIT_ALLOW_NO_CONFIG=1 git commit -m 'pages deploy';
-   git push origin $prod_branch
+   git push origin $prod_branch --force
