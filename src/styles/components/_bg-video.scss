@@ -25,12 +25,12 @@
   // overlay on video to smoothen transitions
   &__overlay {
     position: absolute;
-    opacity: 0.9;
+    opacity: 0;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background-color: $color-almost-black;
-    animation: videoOverlay 26s infinite;
+    animation: fadeIn 6s forwards 20s; // video is about 26seconds
   }
 }

@@ -46,16 +46,6 @@
   }
 }
 
-// hack to do delays between infinite iterations
-// https://css-tricks.com/css-keyframe-animation-delay-iterations/
-// this is used to smoothen end & start of a video
-@keyframes videoOverlay {
-  30%,
-  100% {
-    opacity: 0;
-  }
-}
-
 // simple opacity animation
 @keyframes fadeIn {
   from {

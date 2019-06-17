@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { createHistory, Router, LocationProvider } from "@reach/router";
 import createHashSource from "hash-source";
 
@@ -17,7 +17,7 @@ let history = createHistory(source);
 export default class App extends React.Component {
   render() {
     return (
-      <Fragment>
+      <>
         <LocationProvider history={history}>
           <Header />
           <Router>
@@ -27,7 +27,7 @@ export default class App extends React.Component {
           </Router>
         </LocationProvider>
         <Background />
-      </Fragment>
+      </>
     );
   }
 }
