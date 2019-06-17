@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-// const CleanPlugin = require("clean-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const commonPaths = require("./common-paths");
@@ -100,7 +99,6 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new ExtractTextPlugin("[name].css"),
-    // new CleanPlugin(["../public"], { allowExternal: true }),
     new HtmlPlugin({
       filename: "index.html",
       template: commonPaths.template,

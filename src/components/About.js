@@ -30,7 +30,7 @@ class About extends React.Component {
           <h3 className="heading-tertiary u-margin-bottom-small">
             {skillType}
           </h3>
-          {/* skill bars */}
+          {/* skill bars in a skill group*/}
           {skills[skillType].map(skill => (
             <div
               key={`${skill.name}-${skillType}`}
