@@ -83,9 +83,7 @@
   - tab-port
   - tab-land
   - big-desktop
-  
-  ORDER: BASE + typography > general  layout + grid > page layout > components
-  
+    
   1em -> 16px
   */
 
@@ -103,7 +101,7 @@
     } // 900px
   }
   @if $breakpoint == tab-land {
-    @media only screen and (max-width: 80.5em) {
+    @media only screen and (max-width: 80.5em), screen and (max-height: 56.25em) {
       @content;
     } // 1200px
   }
