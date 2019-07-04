@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 
 // -- local imports
@@ -6,82 +6,87 @@ import social from "./data/social";
 import SocialBox from "./SocialBox";
 import ContactInput from "./ContactInput";
 
-class Contact extends React.Component {
-  state = {
-    subject: "",
-    body: "",
-    btnDisabled: false,
-    btnStatusCls: "",
-    btnText: "contact"
+function Contact() {
+  const defaultBtnState = {
+    style: "",
+    text: "contact",
+    disabled: false
   };
 
-  handleChange = event =>
-    this.setState({ [event.target.name]: event.target.value });
+  const successBtnState = { style: "btn--success", text: "success ✓" };
+  const errBtnState = { style: "btn--error", text: "error ✗" };
 
-  sendEmail = event => {
+  // form inputs
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+  const [formBtn, setFormBtn] = useState(defaultBtnState);
+
+  function sendEmail(event) {
     event.preventDefault();
-    this.setState({ btnDisabled: true });
+    setFormBtn(prevState => ({ ...prevState, disabled: true }));
 
     emailjs
       .send(
         process.env.EMAILJS_SERVICE_ID,
         process.env.EMAILJS_TEMPLATE_ID,
-        this.state,
+        { subject: subject, body: body },
         process.env.EMAILJS_USER_ID
       )
       .then(
         // success
-        () => {
-          this.setState({ btnStatusCls: "btn--success", btnText: "success ✓" });
-        },
+        () =>
+          setFormBtn(prevState => ({
+            ...prevState,
+            ...successBtnState
+          })),
         // error
-        () => {
-          this.setState({ btnStatusCls: "btn--error", btnText: "error ✗" });
-        }
+        () =>
+          setFormBtn(prevState => ({
+            ...prevState,
+            errBtnState
+          }))
       )
       .then(() => {
         setTimeout(() => {
-          this.setState({
-            btnDisabled: false,
-            btnStatusCls: "",
-            btnText: "contact"
-          });
+          setFormBtn(defaultBtnState);
         }, 3000);
       });
-  };
-
-  render() {
-    const { btnStatusCls, btnDisabled, btnText } = this.state;
-    return (
-      <section className="contact">
-        <div className="contact__email">
-          <form action="#" className="form" onSubmit={this.sendEmail}>
-            <ContactInput
-              placeholder="Email Subject"
-              inputId="subject"
-              handleChange={this.handleChange}
-            />
-            <ContactInput
-              inputType="textarea"
-              placeholder="Email Body"
-              inputId="body"
-              handleChange={this.handleChange}
-            />
-            <div className="form__group">
-              <button className={`btn ${btnStatusCls}`} disabled={btnDisabled}>
-                {btnText}
-              </button>
-            </div>
-          </form>
-        </div>
-        <div className="contact__social">
-          {social.map(boxDetails => (
-            <SocialBox boxDetails={boxDetails} key={boxDetails.icon} />
-          ))}
-        </div>
-      </section>
-    );
   }
+
+  return (
+    <section className="contact">
+      <div className="contact__email">
+        <form action="#" className="form" onSubmit={sendEmail}>
+          <ContactInput
+            placeholder="Email Subject"
+            inputId="subject"
+            handleChange={e => setSubject(e.target.value)}
+            value={subject}
+          />
+          <ContactInput
+            inputType="textarea"
+            placeholder="Email Body"
+            inputId="body"
+            handleChange={e => setBody(e.target.value)}
+            value={body}
+          />
+          <div className="form__group">
+            <button
+              className={`btn ${formBtn.style}`}
+              disabled={formBtn.disabled}
+            >
+              {formBtn.text}
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className="contact__social">
+        {social.map(boxDetails => (
+          <SocialBox boxDetails={boxDetails} key={boxDetails.icon} />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Contact;

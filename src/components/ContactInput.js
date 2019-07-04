@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
+const ContactInput = ({
+  inputId,
+  placeholder,
+  inputType,
+  handleChange,
+  value
+}) => {
   let input = {};
   if (inputType == "text") {
     input = (
@@ -13,6 +19,7 @@ const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
         id={inputId}
         onChange={handleChange}
         required="required"
+        value={value}
       />
     );
   } else if (inputType == "textarea") {
@@ -24,6 +31,7 @@ const ContactInput = ({ inputId, placeholder, inputType, handleChange }) => {
         id={inputId}
         onChange={handleChange}
         required="required"
+        value={value}
       />
     );
   }

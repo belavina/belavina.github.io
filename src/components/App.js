@@ -2,17 +2,18 @@ import React from "react";
 import { createHistory, Router, LocationProvider } from "@reach/router";
 import createHashSource from "hash-source";
 
-// shared
+// Shared components
 import Header from "./Header";
 import Background from "./Background";
 
-// content
+// Tab content
 import About from "./About";
 import Experience from "./Experience";
 import Contact from "./Contact";
 
-let source = createHashSource();
-let history = createHistory(source);
+// use hash-based urls
+const source = createHashSource();
+const history = createHistory(source);
 
 export default class App extends React.Component {
   render() {

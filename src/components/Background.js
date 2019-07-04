@@ -1,11 +1,7 @@
 import React from "react";
 
 const Background = () => {
-  let autoPlay = true;
-  if (document.body.clientWidth < 870) {
-    autoPlay = false;
-  }
-
+  const autoPlay = document.body.clientWidth > 870;
   const modifierCls = autoPlay ? "" : "bg-video__content--hidden";
 
   return (
