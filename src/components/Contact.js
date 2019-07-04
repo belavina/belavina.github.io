@@ -43,7 +43,7 @@ function Contact() {
         () =>
           setFormBtn(prevState => ({
             ...prevState,
-            errBtnState
+            ...errBtnState
           }))
       )
       .then(() => {
