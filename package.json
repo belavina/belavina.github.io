@@ -71,9 +71,9 @@
     "emailjs-com": "^2.3.2",
     "hash-source": "^1.0.4",
     "normalize.css": "^8.0.0",
-    "react": "^16.5.2",
+    "react": "^16.8.6",
     "react-css-transition-replace": "^3.0.3",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.6",
     "react-transition-group": "^2.5.3"
   }
 }
