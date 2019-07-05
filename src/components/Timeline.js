@@ -66,7 +66,7 @@ function Timeline({ timelineData, selectBreakpoint, selectedBp }) {
 
   return (
     <div className="timeline">
-      {breakpoints}
+      <div className="timeline__breakpoint-group">{breakpoints}</div>
       <div className="timeline__ribbon" />
       <div className="timeline__dateline">{dateMarks}</div>
     </div>
