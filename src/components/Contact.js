@@ -34,11 +34,15 @@ function Contact() {
       )
       .then(
         // success
-        () =>
+        () => {
           setFormBtn(prevState => ({
             ...prevState,
             ...successBtnState
-          })),
+          }));
+          setSubject("");
+          setBody("");
+        },
+
         // error
         () =>
           setFormBtn(prevState => ({
