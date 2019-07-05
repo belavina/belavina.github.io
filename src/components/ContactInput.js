@@ -51,6 +51,8 @@ ContactInput.propTypes = {
   inputId: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   inputType: PropTypes.oneOf(["text", "textarea"]),
+  /** input content*/
+  value: PropTypes.string,
   /** called on input change */
   handleChange: PropTypes.func.isRequired
 };

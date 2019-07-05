@@ -1,77 +1,62 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
-class TimelineBreakpoint extends React.Component {
-  state = {
-    bpOveflown: false
-  };
+function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
+  const [bpOveflown, setBpOverflown] = useState(false);
+  const bpTitle = useRef(null);
 
-  componentDidMount() {
-    if (this.bpTitle && this.isOverflown(this.bpTitle)) {
-      this.setState({ bpOveflown: true });
+  useEffect(() => {
+    if (bpTitle && isOverflown(bpTitle)) {
+      setBpOverflown(true);
     }
-  }
+  }, []);
 
-  isOverflown = element => {
+  const isOverflown = element => {
     return (
       element.scrollHeight > element.clientHeight ||
       element.scrollWidth > element.clientWidth
     );
   };
 
-  bpTitle = {};
+  const ovflCls = noOvflwCls =>
+    bpOveflown ? `${noOvflwCls}--overflown` : noOvflwCls;
 
-  render() {
-    const ovflCls = noOvflwCls =>
-      this.state.bpOveflown ? `${noOvflwCls}--overflown` : noOvflwCls;
-    const { selectBreakpoint, calcLeft, job, selectedBp, bpKey } = this.props;
+  const startPercent = calcLeft(new Date(bpItem.startDate));
+  const endPercent = bpItem.endDate ? calcLeft(new Date(bpItem.endDate)) : 100;
 
-    const startPercentage = calcLeft(new Date(job.startDate));
-    const endPercentage = job.endDate ? calcLeft(new Date(job.endDate)) : 100;
+  const bpClasses = [
+    "timeline__breakpoint",
+    ovflCls("timeline__breakpoint"),
+    bpItem.selected ? "timeline__breakpoint--selected" : ""
+  ].join(" ");
 
-    const bpSelectedClass =
-      bpKey(job) == bpKey(selectedBp) ? "timeline__breakpoint--selected" : "";
-
-    const bpClassees =
-      "timeline__breakpoint " +
-      `${ovflCls("timeline__breakpoint")} ` +
-      bpSelectedClass;
-
-    return (
-      <div
-        onClick={() => selectBreakpoint(job)}
-        className={bpClassees}
-        style={{
-          left: `${startPercentage}%`,
-          width: `${endPercentage - startPercentage}%`
-        }}
-        key={bpKey(job)}
-      >
-        <h3 className={`timeline__bp-header ${ovflCls("timeline__bp-header")}`}>
-          <span
-            className={`${ovflCls("timeline__bp-header")}--main`}
-            ref={ref => {
-              this.bpTitle = ref;
-              return true;
-            }}
-          >
-            {job.title}
-          </span>
-          <span className={`${ovflCls("timeline__bp-header")}--sub`}>
-            {job.company}
-          </span>
-        </h3>
-      </div>
-    );
-  }
+  return (
+    <div
+      onClick={() => selectBreakpoint(bpItem)}
+      className={bpClasses}
+      style={{
+        left: `${startPercent}%`,
+        width: `${endPercent - startPercent}%`
+      }}
+    >
+      <h3 className={`timeline__bp-header ${ovflCls("timeline__bp-header")}`}>
+        <span
+          className={`${ovflCls("timeline__bp-header")}--main`}
+          ref={bpTitle}
+        >
+          {bpItem.header}
+        </span>
+        <span className={`${ovflCls("timeline__bp-header")}--sub`}>
+          {bpItem.subHeader}
+        </span>
+      </h3>
+    </div>
+  );
 }
 
 TimelineBreakpoint.propTypes = {
-  job: PropTypes.object.isRequired,
-  selectedBp: PropTypes.object.isRequired,
-
+  bpItem: PropTypes.object.isRequired,
   selectBreakpoint: PropTypes.func.isRequired,
-  bpKey: PropTypes.func.isRequired,
   calcLeft: PropTypes.func.isRequired
 };
 

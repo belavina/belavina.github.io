@@ -15,20 +15,18 @@ import Contact from "./Contact";
 const source = createHashSource();
 const history = createHistory(source);
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <>
-        <LocationProvider history={history}>
-          <Header />
-          <Router>
-            <About path="about" />
-            <Experience path="experience" />
-            <Contact path="contact" />
-          </Router>
-        </LocationProvider>
-        <Background />
-      </>
-    );
-  }
+export default function App() {
+  return (
+    <>
+      <LocationProvider history={history}>
+        <Header />
+        <Router>
+          <About path="about" />
+          <Experience path="experience" />
+          <Contact path="contact" />
+        </Router>
+      </LocationProvider>
+      <Background />
+    </>
+  );
 }
