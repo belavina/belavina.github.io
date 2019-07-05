@@ -16,7 +16,7 @@ function Timeline({ timelineData, selectBreakpoint, selectedBp }) {
   const dateMarks = [];
 
   // pad first date to the left by subtracting 3 months
-  let firstDate = new Date(timelineData[0].startDate);
+  const firstDate = new Date(timelineData[0].startDate);
   firstDate.setMonth(firstDate.getMonth() - 3);
 
   // 100% of the timeline
@@ -47,7 +47,7 @@ function Timeline({ timelineData, selectBreakpoint, selectedBp }) {
   const yearsExperience = getTotalYears(firstDate);
 
   [...Array(yearsExperience)].forEach((_, i) => {
-    let markDate = new Date(new Date().getFullYear(), 0, 1);
+    const markDate = new Date(new Date().getFullYear(), 0, 1);
     markDate.setFullYear(new Date().getFullYear() - i);
     const percentFromLeft = calcLeft(new Date(markDate));
 

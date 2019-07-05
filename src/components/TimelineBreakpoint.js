@@ -11,12 +11,9 @@ function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
     }
   }, []);
 
-  const isOverflown = element => {
-    return (
-      element.scrollHeight > element.clientHeight ||
-      element.scrollWidth > element.clientWidth
-    );
-  };
+  const isOverflown = ({ current }) =>
+    current.scrollHeight > current.clientHeight ||
+    current.scrollWidth > current.clientWidth;
 
   const ovflCls = noOvflwCls =>
     bpOveflown ? `${noOvflwCls}--overflown` : noOvflwCls;
@@ -55,8 +52,11 @@ function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
 }
 
 TimelineBreakpoint.propTypes = {
+  /* Breakpoint data such as date range values and text */
   bpItem: PropTypes.object.isRequired,
+  /* Called when breakpoint is selected */
   selectBreakpoint: PropTypes.func.isRequired,
+  /* Calculate '%' padded from the left */
   calcLeft: PropTypes.func.isRequired
 };
 
