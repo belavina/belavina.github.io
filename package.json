@@ -16,7 +16,7 @@
     "lint": "eslint .; exit 0",
     "lint:fix": "eslint . --fix; exit 0",
     "start": "npm run serve:dev",
-    "test": "echo \"No tests available\"; exit 0"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^2.1.1",
@@ -53,8 +54,10 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
+    "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
