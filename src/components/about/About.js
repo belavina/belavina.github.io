@@ -2,8 +2,8 @@ import React, { Fragment, useState } from "react";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 
 // - local imports
-import skills from "./data/skills";
-import devInfo from "./data/devInfo";
+import skills from "../data/skills";
+import devInfo from "../data/devInfo";
 
 function About() {
   const [selectedSkill, setSelectedSkill] = useState(null);

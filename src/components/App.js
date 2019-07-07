@@ -3,13 +3,13 @@ import { createHistory, Router, LocationProvider } from "@reach/router";
 import createHashSource from "hash-source";
 
 // Shared components
-import Header from "./Header";
-import Background from "./Background";
+import Header from "./shared/Header";
+import Background from "./shared/Background";
 
 // Tab content
-import About from "./About";
-import Experience from "./Experience";
-import Contact from "./Contact";
+import About from "./about/About";
+import Experience from "./experience/Experience";
+import Contact from "./contact/Contact";
 
 // use hash-based urls
 const source = createHashSource();

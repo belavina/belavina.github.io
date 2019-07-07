@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // - local imports
-import experience from "./data/experience";
+import experience from "../data/experience";
 import Timeline from "./Timeline";
 
 function Experience() {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 
 // -- local imports
-import social from "./data/social";
+import social from "../data/social";
 import SocialBox from "./SocialBox";
 import ContactInput from "./ContactInput";
 
