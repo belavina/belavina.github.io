@@ -2,56 +2,56 @@
   "Programming Languages": [
     {
       "name": "Python",
-      "percentage": "90",
+      "percentage": 90,
       "description": "Multithreading, Web-Socket programming, BDD (Behave) & unittest"
     },
     {
       "name": "Javascript",
-      "percentage": "80",
+      "percentage": 80,
       "description": "ES6, Babel & WebPack"
     },
     {
       "name": "PHP",
-      "percentage": "60",
+      "percentage": 60,
       "description": "Slim framework, API development"
     },
     {
       "name": "C++/C",
-      "percentage": "40",
+      "percentage": 40,
       "description": "Computer Vision & 3D Meshing Tools"
     },
     {
       "name": "GoLang",
-      "percentage": "40",
+      "percentage": 40,
       "description": "API development"
     }
   ],
   "Frameworks": [
     {
       "name": "ReactJS",
-      "percentage": "90",
+      "percentage": 90,
       "description": "+Redux, Routing and (some) ReactNative experience"
     },
     {
       "name": "NodeJS",
-      "percentage": "80",
+      "percentage": 80,
       "description": "API development"
     }
   ],
   "Databases": [
     {
       "name": "MySQL",
-      "percentage": "90",
+      "percentage": 90,
       "description": ""
     },
     {
       "name": "Neo4J/Cypher",
-      "percentage": "80",
+      "percentage": 80,
       "description": ""
     },
     {
       "name": "Mongo",
-      "percentage": "80",
+      "percentage": 80,
       "description": ""
     }
   ]
