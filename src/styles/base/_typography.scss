@@ -34,7 +34,8 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
 
-    animation: textBgClip 1.4s ease-out forwards, moveInLeft 1.4s ease-out;
+    animation: fadeIn 1.4s ease-out forwards, moveInLeft 1.4s ease-out;
+    @include headerTextClip;
 
     @include respond(phone) {
       letter-spacing: 1rem;

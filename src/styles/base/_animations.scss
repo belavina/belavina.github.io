@@ -18,15 +18,6 @@
   }
 }
 
-@keyframes textBgClip {
-  from {
-    opacity: 0;
-  }
-  to {
-    @include headerTextClip;
-  }
-}
-
 @keyframes moveInRight {
   /* start */
   0% {
