@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
-  const [bpOveflown, setBpOverflown] = useState(false);
+  const [bpOverflown, setBpOverflown] = useState(false);
   const bpTitle = useRef(null);
 
   useEffect(() => {
@@ -15,8 +15,8 @@ function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
     current.scrollHeight > current.clientHeight ||
     current.scrollWidth > current.clientWidth;
 
-  const ovflCls = noOvflwCls =>
-    bpOveflown ? `${noOvflwCls}--overflown` : noOvflwCls;
+  const ovflCls = (noOvflwCls) =>
+    bpOverflown ? `${noOvflwCls}--overflown` : noOvflwCls;
 
   const startPercent = calcLeft(new Date(bpItem.startDate));
   const endPercent = bpItem.endDate ? calcLeft(new Date(bpItem.endDate)) : 100;
@@ -24,7 +24,7 @@ function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
   const bpClasses = [
     "timeline__breakpoint",
     ovflCls("timeline__breakpoint"),
-    bpItem.selected ? "timeline__breakpoint--selected" : ""
+    bpItem.selected ? "timeline__breakpoint--selected" : "",
   ].join(" ");
 
   return (
@@ -33,7 +33,7 @@ function TimelineBreakpoint({ selectBreakpoint, calcLeft, bpItem }) {
       className={bpClasses}
       style={{
         left: `${startPercent}%`,
-        width: `${endPercent - startPercent}%`
+        width: `${endPercent - startPercent}%`,
       }}
     >
       <h3 className={`timeline__bp-header ${ovflCls("timeline__bp-header")}`}>
@@ -57,7 +57,7 @@ TimelineBreakpoint.propTypes = {
   /* Called when breakpoint is selected */
   selectBreakpoint: PropTypes.func.isRequired,
   /* Calculate '%' padded from the left */
-  calcLeft: PropTypes.func.isRequired
+  calcLeft: PropTypes.func.isRequired,
 };
 
 export default TimelineBreakpoint;
