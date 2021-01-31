@@ -4,11 +4,11 @@
     "company": "Ontario Public Service",
     "startDate": "2016-09-01",
     "endDate": "2017-04-29",
-    "description": "Took an active role in development of media-sharing platform for provincial intranet system",
+    "description": "Took an active role in the development of a media-sharing platform for a provincial intranet system",
     "keyItems": [
       "implemented comprehensive media delivery system",
       "performance/optimization, API development",
-      "AWS development including lambda/API getway, S3"
+      "AWS development including lambda/API gateway, S3"
     ],
     "technologies": [
       "PHP/Slim",
@@ -27,7 +27,8 @@
     "title": "Software Developer",
     "company": "Seneca College",
     "startDate": "2017-04-29",
-    "description": "As a Software Developer at OSTEP team, I have successfully completed 3 projects using diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
+    "endDate": "2019-08-30",
+    "description": "As a Software Developer at the OSTEP team, I have successfully completed three projects using a diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
     "keyItems": [
       "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
       "delivered MERN-stack based software deployment system (Z3 Systems)",
@@ -41,6 +42,21 @@
       "MongoDB",
       "Neo4J",
       "Redis"
+    ]
+  },
+  {
+    "title": "Software Developer",
+    "company": "Xero",
+    "startDate": "2019-10-15",
+    "description": "Lorem Ipsum",
+    "keyItems": ["A", "B", "C"],
+    "technologies": [
+      "NodeJS",
+      "Typescript",
+      "AWS",
+      "Terraform",
+      "PostgreSQL",
+      "Docker"
     ]
   }
 ]
