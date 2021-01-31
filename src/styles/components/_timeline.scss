@@ -10,6 +10,11 @@
     height: 6rem;
   }
 
+  @include respond(phone) {
+    width: 88%;
+    left: -2.5rem;
+  }
+
   // -- breakpoint is a time-span area placed on the timeline
   &__breakpoint {
     opacity: 0;
@@ -30,6 +35,7 @@
     }
 
     // -- breakpoint 45degree marks (for selection & hover area)
+    // (invisible by default)
     &::after {
       content: "";
       position: absolute;
@@ -41,6 +47,7 @@
       opacity: 0;
     }
 
+    // activated 45 degree marks
     &:hover::after,
     &--selected::after {
       opacity: 1;
@@ -53,6 +60,7 @@
       );
     }
 
+    // border delimiting breakpoints (experiences)
     &::before {
       content: "";
       position: absolute;
