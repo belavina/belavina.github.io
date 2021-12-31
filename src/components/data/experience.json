@@ -15,7 +15,6 @@
       "JavaScript",
       "HTML5",
       "CSS",
-      "WordPress",
       "Golang",
       "Docker/Vagrant",
       "MySQL",
@@ -27,7 +26,7 @@
     "title": "Software Developer",
     "company": "Seneca College",
     "startDate": "2017-04-29",
-    "endDate": "2019-08-30",
+    "endDate": "2019-10-15",
     "description": "As a Software Developer at the OSTEP team, I have successfully completed three projects using a diverse stack of technologies ranging from C++ 3D libraries to modern web-frameworks",
     "keyItems": [
       "implemented photogrammetry pipeline using open-source computer vision software (Twinster)",
@@ -48,14 +47,39 @@
     "title": "Software Developer",
     "company": "Xero",
     "startDate": "2019-10-15",
-    "description": "Lorem Ipsum",
-    "keyItems": ["A", "B", "C"],
+    "endDate": "2021-06-14",
+    "description": "Worked on a highly-available and scalable web scraping platform responsible for uploading key financial data (core Platform team)",
+    "keyItems": [
+      "improved the efficiency of a scheduling system and created core metrics and alerts",
+      "implemented direct API integrations with the major USA banks",
+      "developed a performance testing system capable of accurately simulating predicted future loads and identified potential bottlenecks"
+    ],
     "technologies": [
       "NodeJS",
       "Typescript",
       "AWS",
       "Terraform",
       "PostgreSQL",
+      "Docker"
+    ]
+  },
+  {
+    "title": "Sr. Software Developer",
+    "company": "Unity",
+    "startDate": "2021-06-14",
+    "description": "Senior Developer role in Monetization/Growth with a focus on experimental greenfield development (Unity Ads)",
+    "keyItems": [
+      "architected, developed, and deployed asynchronous systems and core backend services",
+      "coordinated integration processes with various Unity products across multiple teams in the USA, Canada, and Europe",
+      "added key UI features enhancing ad creative generation workflows in <a href=\"https://unity.com/solutions/gaming-services\" target=\"_blank\">'Unity Gaming Services'</a>"
+    ],
+    "technologies": [
+      "NodeJS",
+      "ReactJS",
+      "Typescript",
+      "GCP",
+      "Terraform",
+      "Golang",
       "Docker"
     ]
   }

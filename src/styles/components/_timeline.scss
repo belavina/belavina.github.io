@@ -84,7 +84,8 @@
   &__bp-header {
     text-align: center;
     font-weight: 200;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
 
     @include respond(phone) {
       display: none;
@@ -92,7 +93,7 @@
 
     &--main {
       display: block;
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       @include respond(tab-land) {
         font-size: 1.2rem;
       }
@@ -160,6 +161,7 @@
     animation: expandWidth 2s;
     position: absolute;
     width: 100%;
+    top: 1rem;
 
     background-image: linear-gradient(
       to right,

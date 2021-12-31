@@ -38,8 +38,8 @@ function Timeline({ timelineData, selectBreakpoint, selectedBp }) {
         bpItem={{
           ...job,
           selected: bpKey(job) == bpKey(selectedBp),
-          header: job.title,
-          subHeader: job.company,
+          header: job.company,
+          subHeader: job.title,
         }}
         selectedBp={selectedBp}
         bpKey={bpKey}
